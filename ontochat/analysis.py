@@ -152,7 +152,6 @@ def hdbscan_clustering(cqs, embeddings, min_cluster_size=2):
     )
     clusterer.fit(embeddings)
     cluster_assignment = clusterer.labels_
-    print(cluster_assignment)
 
     clustered_cqs = defaultdict(list)
     for sentence_id, cluster_id in enumerate(cluster_assignment):

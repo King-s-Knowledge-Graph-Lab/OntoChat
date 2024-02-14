@@ -11,8 +11,8 @@ If you would like to deploy this demo locally,
 2. Run `app.py`.
 
 ## TODO
+- Hosting in Hugging Face Space
 - Add ontology testing
 - Add the evaluation panel (?)
 - Optimize clustering visualization
 - Adjust flagging
-- Adjust user story generation logic (change persona, goal, sample data into input boxes)
