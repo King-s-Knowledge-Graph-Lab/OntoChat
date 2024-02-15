@@ -16,7 +16,6 @@ with open('chatHistory.txt', "w") as file:
     file.write("===Your chatHistory===\n")
 
 
-
 #OpenAI Set-up
 MODEL_NAME = "gpt-3.5-turbo"
 TEMPERATURE = 0
