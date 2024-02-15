@@ -152,7 +152,6 @@ def hdbscan_clustering(cqs, embeddings, min_cluster_size=2):
     )
     clusterer.fit(embeddings)
     cluster_assignment = clusterer.labels_
-    print(cluster_assignment)
 
     clustered_cqs = defaultdict(list)
     for sentence_id, cluster_id in enumerate(cluster_assignment):
@@ -223,11 +222,12 @@ def response_parser(response):
     return response
 
 
-def llm_cq_clustering(cqs: str, n_clusters: int, paraphrase_detection=False):
+def llm_cq_clustering(cqs: str, n_clusters: int, api_key, paraphrase_detection=False):
     """
 
     :param cqs:
     :param n_clusters:
+    :param api_key:
     :param paraphrase_detection:
     :return:
     """
@@ -260,7 +260,7 @@ def llm_cq_clustering(cqs: str, n_clusters: int, paraphrase_detection=False):
                     "Return in JSON format, such as: {'cluster 1 topic': " \
                     "['competency question 1', 'competency question 2']}:"
         conversation_history.append({"role": "user", "content": prompt_2})
-        response = chat_completion(conversation_history)
+        response = chat_completion(api_key, conversation_history)
         # print("Output is: \"{}\"".format(response))
 
     # # 3. assign labels
