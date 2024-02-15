@@ -10,8 +10,10 @@ If you would like to deploy this demo locally,
 1. Create a python environment and install the requirements using `pip install -r requirements.txt`.
 2. Run `app.py`.
 
+## Hosting in Hugging Face Spaces
+OntoChat has been hosted in HF Spaces at: [https://huggingface.co/spaces/b289zhan/OntoChat](https://huggingface.co/spaces/b289zhan/OntoChat).
+
 ## TODO
-- Hosting in Hugging Face Space
 - Add ontology testing
 - Add the evaluation panel (?)
 - Optimize clustering visualization

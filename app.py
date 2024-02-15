@@ -5,7 +5,9 @@ from ontochat.functions import *
 
 with gr.Blocks() as user_story_interface:
     gr.Markdown(
-        """# OntoChat Hello! I am OntoChat, your conversational ontology engineering assistant, to help you generate 
+        """
+        # OntoChat 
+        Hello! I am OntoChat, your conversational ontology engineering assistant, to help you generate 
         user stories, elicit requirements, and extract and analyze competency questions. In ontology engineering, 
         a user story contains all the requirements from the perspective of an end user of the ontology. It is a way 
         of capturing what a user needs to achieve with the ontology while also providing context and value. This demo 
@@ -14,13 +16,18 @@ with gr.Blocks() as user_story_interface:
         find the generated user story satisfactory, please copy the generated user story and go to the next step (
         tab)."""
     )
+
+    with gr.Group():
+        api_key = gr.Textbox(
+            label="OpenAI API Key",
+            info="Please input your OpenAI API Key if you don't have it set up on your own machine. Please note that "
+                 "the key will only be used for this demo and will not be uploaded or used anywhere else."
+        )
+        api_key_btn = gr.Button(value="Set API Key")
+        api_key_btn.click(fn=set_openai_api_key, inputs=api_key, outputs=api_key)
+
     with gr.Row():
         with gr.Column():
-            api_key = gr.Textbox(
-                label="OpenAI API Key",
-                info="Please input your OpenAI API Key if you don't have it set up on your own machine. Please note "
-                     "that the key will only be used for this demo and will not be uploaded or used anywhere else."
-            )
             persona = gr.Textbox(
                 label="Persona",
                 placeholder="Please input the persona of the user, including the name, occupations, skills, interests.",
@@ -55,7 +62,7 @@ with gr.Blocks() as user_story_interface:
     generate_btn.click(
         fn=user_story_init_generator,
         inputs=[
-            api_key, persona, goal, sample_data
+            persona, goal, sample_data
         ],
         outputs=[
             user_story, user_story_chatbot
@@ -63,8 +70,12 @@ with gr.Blocks() as user_story_interface:
     )
     chatbot_input.submit(
         fn=user_story_generator,
-        inputs=[chatbot_input, user_story_chatbot],
-        outputs=[user_story, user_story_chatbot]
+        inputs=[
+            chatbot_input, user_story_chatbot
+        ],
+        outputs=[
+            user_story, user_story_chatbot
+        ]
     )
 
 cq_interface = gr.Interface(

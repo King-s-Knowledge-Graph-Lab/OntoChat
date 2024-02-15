@@ -1,13 +1,13 @@
 from openai import OpenAI
 
-
-client = OpenAI()
+# client = OpenAI()
 MODEL_NAME = "gpt-3.5-turbo"
 TEMPERATURE = 0
 SEED = 1234
 
 
-def chat_completion(messages):
+def chat_completion(api_key, messages):
+    client = OpenAI(api_key=api_key)
     completion = client.chat.completions.create(
         model=MODEL_NAME,
         messages=messages,
@@ -23,10 +23,10 @@ def build_history(messages):
     :param messages:
     :return:
     """
-    message_list = [None,]
+    message_list = [None, ]
     for item in messages:
         message_list.append(item["content"])
-    history = [[message_list[i], message_list[i+1]] for i in range(0, len(message_list), 2)]
+    history = [[message_list[i], message_list[i + 1]] for i in range(0, len(message_list), 2)]
     return history
 
 
