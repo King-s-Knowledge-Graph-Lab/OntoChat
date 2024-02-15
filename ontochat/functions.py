@@ -31,7 +31,7 @@ def user_story_init_generator(persona, goal, sample_data):
         "content": f"The persona of the user is {persona}. The goal of the user is {goal}. A sampple of data is "
                    f"{sample_data}. Write a user story for the ontology that fit into the information provided."
     }]
-    bot_message = chat_completion(openai_api_key, messages)
+    bot_message = chat_completion(messages)
     messages.append({
         "role": "system",
         "content": bot_message
@@ -40,17 +40,25 @@ def user_story_init_generator(persona, goal, sample_data):
     return bot_message, history
 
 
-def user_story_generator(message, history):
-    """
+def user_story_generator(persona, goal, example):
 
-    :param message:
-    :param history:
-    :return:
-    """
-    messages = build_messages(history)
-    bot_message = chat_completion(openai_api_key, messages)
-    history.append((message, bot_message))
-    return bot_message, history
+    client_messages = [{
+        "role": "system",
+        "content": "Hello! I am OntoChat, your conversational ontology engineering assistant, to help you "
+                    "generate user stories, elicit requirements, and extract and analyze competency questions. In "
+                    "ontology engineering, a user story contains all the requirements from the perspective of an "
+                    "end user of the ontology. It is a way of capturing what a user needs to achieve with the "
+                    "ontology while also providing context and value. This demo will guide you step-by-step to "
+                    "create a user story and generate competency questions from it."
+                    "What are the name and occupation of the user, and what are their skills and interests?"
+    }]
+    client_messages.append({"role": "user", "content": persona})
+    client_messages.append({"role": "system", "content": "What is the goal of the user? Are they facing specific issues?"})
+    client_messages.append({"role": "user", "content": goal})
+    client_messages.append({"role": "system", "content": "Do you have examples of data?"})
+    client_messages.append({"role": "user", "content": example})
+    bot_message = chat_completion(client_messages)
+    return bot_message
 
 
 def cq_generator(messages, numbers):
@@ -69,7 +77,7 @@ def cq_generator(messages, numbers):
             "content": f"Please generate {numbers} competency questions based on the user story: {messages}"
         }  # TODO: format constraint
     ]
-    response = chat_completion(openai_api_key, messages)
+    response = chat_completion(messages)
     return response
 
 

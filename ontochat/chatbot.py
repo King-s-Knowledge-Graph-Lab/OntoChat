@@ -1,11 +1,17 @@
 from openai import OpenAI
 
 
-client = OpenAI()
+
+
 MODEL_NAME = "gpt-3.5-turbo"
 TEMPERATURE = 0
 SEED = 1234
+global client
 
+def client_import(client_away):
+    global client
+    client = client_away
+    
 
 def chat_completion(messages):
     completion = client.chat.completions.create(
