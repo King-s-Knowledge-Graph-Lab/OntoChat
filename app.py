@@ -62,7 +62,7 @@ with gr.Blocks() as cq_interface:
     gr.Markdown(
         """
         # OntoChat 
-        This is the second step of the demo. Please copy the generated user story from the previous 
+        This is the second step of OntoChat. Please copy the generated user story from the previous 
         step and use it here. You can also modify the user story before using it for generating competency questions. 
         **Recommended prompt workflow:** 
         1. Obtain competency questions from the user story. 
@@ -120,7 +120,7 @@ with gr.Blocks() as cq_interface:
 clustering_interface = gr.Interface(
     fn=clustering_generator,
     inputs=[
-        gr.Textbox(
+        gr.TextArea(
             label="Competency questions",
             info="Please copy the previously generated competency questions and paste it here. You can also modify "
                  "the questions before submitting them."
@@ -148,11 +148,46 @@ clustering_interface = gr.Interface(
         )
     ],
     title="OntoChat",
+    description="This is the third step of OntoChat. Please copy the generated competency questions from the previous "
+                "step and run the clustering algorithm to group the competency questions based on their topics. From "
+                "our experience, LLM clustering has the best performance.",
+    allow_flagging="never"
 )
 
+
+with gr.Blocks() as testing_interface:
+    gr.Markdown(
+        """
+        # OntoChat 
+        This is the final part of OntoChat which performs ontology testing based on the input ontology file and CQs. 
+        """
+    )
+    ontology_file = gr.File(label="Ontology file")
+    ontology_desc = gr.Textbox(
+        label="Ontology description",
+        placeholder="Please provide a description of the ontology uploaded to provide basic information and "
+                    "additional context."
+    )
+    cq_testing_input = gr.Textbox(
+        label="Competency questions",
+        placeholder="Please provide the competency questions that you want to test with."
+    )
+    testing_btn = gr.Button(value="Test")
+    testing_output = gr.TextArea(label="Ontology testing output")
+    testing_btn.click(
+        fn=ontology_testing,
+        inputs=[
+            ontology_file, ontology_desc, cq_testing_input
+        ],
+        outputs=[
+            testing_output
+        ]
+    )
+
+
 demo = gr.TabbedInterface(
-    [user_story_interface, cq_interface, clustering_interface],
-    ["User Story Generation", "Competency Question Extraction", "Competency Question Analysis"]
+    [user_story_interface, cq_interface, clustering_interface, testing_interface],
+    ["User Story Generation", "Competency Question Extraction", "Competency Question Analysis", "Ontology Testing"]
 )
 
 

@@ -6,6 +6,7 @@ import json
 
 from ontochat.chatbot import chat_completion, build_messages
 from ontochat.analysis import compute_embeddings, agglomerative_clustering, hdbscan_clustering, llm_cq_clustering
+from ontochat.verbaliser import verbalise_ontology
 
 
 def set_openai_api_key(api_key: str):
@@ -96,3 +97,26 @@ def clustering_generator(cqs, cluster_method, n_clusters):
         cq_clusters, cluster_image = llm_cq_clustering(cqs, n_clusters, openai_api_key)
 
     return cluster_image, json.dumps(cq_clusters, indent=4)
+
+
+def ontology_testing(ontology_file, ontology_desc, cqs):
+    """
+
+    :param ontology_file:
+    :param ontology_desc:
+    :param cqs:
+    :return:
+    """
+    verbalisation = verbalise_ontology(ontology_file, ontology_desc, "")
+    messages = [{
+        "role": "system",
+        "content": "Please (1) provide a description of the ontology uploaded to provide basic information and "
+                   "additional context, (2) give the competency questions (CQs) that you want to test with."
+    }, {
+        "role": "user",
+        "content": verbalisation + "\n" + f"Given the above ontology, please label each competency question: {cqs} to "
+                                          f"determine whether it is addressed properly or not. Format your response in"
+                                          f" ['yes': 'CQ1', 'no': 'CQ2', ...]."
+    }]
+    bot_message = chat_completion(openai_api_key, messages)
+    return bot_message

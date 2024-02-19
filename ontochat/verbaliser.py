@@ -12,15 +12,14 @@ from typing import List
 
 import rdflib
 from rdflib import Graph
-from rdflib import URIRef
 from rdflib.namespace import RDF, RDFS, OWL
 
-from queries import NE_QUERY
+from ontochat.queries import NE_QUERY
 
 logger = logging.getLogger("ontochat.verbaliser")
 
 
-def verbalise_ontology(ontology_path: str, onto_about : str, onto_desc : str):
+def verbalise_ontology(ontology_path: str, onto_about: str, onto_desc: str):
     """
     A simple method to verbalise ontologies and extract requirements. This is
     currently designed to produce a plain verbalisation.
@@ -45,8 +44,8 @@ def verbalise_ontology(ontology_path: str, onto_about : str, onto_desc : str):
 
     # Everything that has a label is mapped here, otherwise we get a URI label
     label_dict = {s: str(o) for s, _, o in g.triples((None, RDFS.label, None))}
-    label_fn = lambda x: label_dict[x] if x in label_dict \
-        else str(x).split("/")[-1]  # just get the last part of the URI otw
+    # just get the last part of the URI otw
+    label_fn = lambda x: label_dict[x] if x in label_dict else str(x).split("/")[-1]
     comment_dict = {s: str(o) for s, _, o in g.triples((None, RDFS.comment, None))}
 
     logger.info("Class verbalisation: start")
@@ -61,8 +60,7 @@ def verbalise_ontology(ontology_path: str, onto_about : str, onto_desc : str):
     relat_vrbs = verbalise_relations(g, label_fn, comment_dict)
     logger.info(f"Relation verbalisation: found {len(class_vrbs)} classes")
 
-    return collate_verbalisations(
-        class_vrbs, nament_vrbs, relat_vrbs, onto_about, onto_desc)
+    return collate_verbalisations(class_vrbs, nament_vrbs, relat_vrbs, onto_about, onto_desc)
 
 
 def create_relation_dict(graph, relation):
@@ -80,7 +78,6 @@ def create_relation_dict(graph, relation):
 
 
 def verbalise_classes(graph: rdflib.Graph, label_fn, comment_dict: dict):
-
     # Classes are first to be extracted, subclasses follow
     classes = [s for s, _, _ in graph.triples((None, RDF.type, OWL.Class))]
     subclasses = create_relation_dict(graph, relation=RDFS.subClassOf)
@@ -121,17 +118,15 @@ def verbalise_named_entities(graph: rdflib.Graph, label, comment_dict: dict):
 
     nentities_verbalisations = []
     for named_entity, named_type in named_entities.items():
-        verbalisation = f"{label(named_entity)} is an instance "\
-                        f"of class {label(named_type)}."
+        verbalisation = f"{label(named_entity)} is an instance of class {label(named_type)}."
         nentities_verbalisations.append(verbalisation)
 
     return nentities_verbalisations
 
 
 def verbalise_relations(graph: rdflib.Graph, label, comment_dict: dict):
-
-    properties  = [s for s, _, _ in graph.triples(
-        (None,  RDF.type, OWL.ObjectProperty))]
+    properties = [s for s, _, _ in graph.triples(
+        (None, RDF.type, OWL.ObjectProperty))]
     subprops = create_relation_dict(graph, relation=RDFS.subPropertyOf)
     domains = create_relation_dict(graph, relation=RDFS.domain)
     ranges = create_relation_dict(graph, relation=RDFS.range)
@@ -173,14 +168,14 @@ def verbalise_relations(graph: rdflib.Graph, label, comment_dict: dict):
     return relation_verbalisations
 
 
-def collate_verbalisations(class_verbalisations : List[str],
-                           relation_verbalisations : List[str],
-                           nentities_verbalisations : List[str],
-                           onto_about : str, onto_desc : str,
+def collate_verbalisations(class_verbalisations: List[str],
+                           relation_verbalisations: List[str],
+                           nentities_verbalisations: List[str],
+                           onto_about: str, onto_desc: str,
                            ):
-
     ontoverb = ""  # This is the basic prompt with the ontology description
-    ontoverb += f"You are given an ontology about {onto_about}. {onto_desc}\n"
+    # ontoverb += f"You are given an ontology about {onto_about}. {onto_desc}\n"
+    ontoverb += f"Ontology description: {onto_about}. {onto_desc}"
 
     ontoverb += "\n"
 

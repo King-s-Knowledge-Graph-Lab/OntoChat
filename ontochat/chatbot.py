@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-# client = OpenAI()
+
 MODEL_NAME = "gpt-3.5-turbo"
 TEMPERATURE = 0
 SEED = 1234
