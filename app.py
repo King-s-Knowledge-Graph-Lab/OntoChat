@@ -1,81 +1,121 @@
 import gradio as gr
-from openai import OpenAI
+
 from ontochat.functions import *
-from ontochat.chatbot import client_import
+
 
 with gr.Blocks() as user_story_interface:
-    with gr.Row():
-        gr.Markdown("## OntoChat")
-    with gr.Row():
-        gr.Markdown("""
-        Hello! I am OntoChat, your conversational ontology engineering assistant, to help you generate user 
-        stories, elicit requirements, and extract and analyze competency questions. In ontology engineering, 
-        a user story contains all the requirements from the perspective of an end user of the ontology. It 
-        is a way of capturing what a user needs to achieve with the ontology while also providing context 
-        and value. This demo will guide you step-by-step to create a user story and generate competency 
-        questions from it. Once you are ready, start inputting your persona, objective (goal), and sample 
-        data and chat with the chatbot. Once you find the generated user story satisfactory, please copy the 
-        generated user story and go to the next step (tab).
-        """)
-    #API key set
-    with gr.Row():
-        def API_key_set(API_KEY):
-            global client
-            client = OpenAI(api_key = API_KEY)
-            client_import(client)
-            return "API Key set successfully!"
-        API_KEY = gr.Textbox(label='Input your API-KEY of OpenAI', placeholder='e.g. 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')
-        key_status = gr.Textbox(label='key status',visible=True)
-        set_btn = gr.Button("Set API key")
-        set_btn.click(fn=API_key_set, inputs=API_KEY, outputs=key_status)
+    gr.Markdown(
+        """
+        # OntoChat 
+        Hello! I am OntoChat, your conversational ontology engineering assistant, to help you generate 
+        user stories, elicit requirements, and extract and analyze competency questions. In ontology engineering, 
+        a user story contains all the requirements from the perspective of an end user of the ontology. It is a way 
+        of capturing what a user needs to achieve with the ontology while also providing context and value. This demo 
+        will guide you step-by-step to create a user story and generate competency questions from it. Once you are 
+        ready, start inputting your persona, objective (goal), and sample data and chat with the chatbot. Once you 
+        find the generated user story satisfactory, please copy the generated user story and go to the next step (
+        tab)."""
+    )
 
-    #User story generator
-    persona_q = "What are the name and occupation of the user, and what are their skills and interests?"
-    goal_q = "What is the goal of the user? Are they facing specific issues?"
-    example_q = "Do you have examples of data?"
-    persona = gr.Textbox(label=persona_q)
-    goal = gr.Textbox(label=goal_q)
-    example = gr.Textbox(label=example_q)
-    output = gr.Textbox(label="Generated user story")
-    generate_btn = gr.Button("Generate")
-    generate_btn.click(fn=user_story_generator, inputs=[persona, goal, example], outputs=output, api_name="Generate")
-
-    #User stroy refinement chatbot
-    gr.Markdown("Copy the generated user story above and paste it here to refine it with the chatbot.")
-    chatbot = gr.Chatbot()
-    msg = gr.Textbox(label="What you would like to refine?")
-    clear = gr.ClearButton([msg, chatbot])
-    client_messages = [{"role": "system", "content": "Hello! I'm here to guide you through refining your user stories, ensuring they're clear, concise, and ready to drive your project forward. User stories are a fundamental part of developing an ontology that truly meets your users' needs, and getting them right is crucial."}]
-
-    def respond(message, chat_history):
-        client_messages.append({"role": "user", "content": message})
-        bot_message = chat_completion(client_messages)
-        chat_history.append((message, bot_message))
-        return "", chat_history
-
-    msg.submit(respond, [msg, chatbot], [msg, chatbot])
-
-cq_interface = gr.Interface(
-    fn=cq_generator,
-    inputs=[
-        gr.Textbox(
-            label="User story",
-            info="Please copy the previously generated user story and paste it here. You can also modify the user "
-                 "story before submitting it."
-        ),
-        gr.Slider(
-            minimum=5,
-            maximum=50,
-            step=1,
-            label="Number of competency questions",
-            info="Please select the number of competency questions you want to generate."
+    with gr.Group():
+        api_key = gr.Textbox(
+            label="OpenAI API Key",
+            info="Please input your OpenAI API Key if you don't have it set up on your own machine. Please note that "
+                 "the key will only be used for this demo and will not be uploaded or used anywhere else."
         )
-    ],
-    outputs=[
-        gr.Textbox(label="Competency questions")
-    ],
-    title="OntoChat",
-)
+        api_key_btn = gr.Button(value="Set API Key")
+        api_key_btn.click(fn=set_openai_api_key, inputs=api_key, outputs=api_key)
+
+    with gr.Row():
+        with gr.Column():
+            user_story_chatbot = gr.Chatbot([
+                [None, "Hello! I am OntoChat, your conversational ontology engineering assistant."],
+                ["I am a domain expert trying to create a user story to be used by ontology engineers. You are the "
+                 "ontology expert. Only ask the following question once I have responded. Ask for the specifications "
+                 "to generate a user story as a user of the system, which should include: 1. The Persona: What are "
+                 "the name, occupation, skills and interests of the user? 2. The Goal: What is the goal of the user? "
+                 "Are they facing specific issues? 3. Example Data: Do you have examples of the specific data "
+                 "available? Make sure you have answers to all three questions before providing a user story. Only "
+                 "ask the next question once I have responded.", "Sure. Let's start with the persona. What are the "
+                 "name, occupations, skills, interests of the user?"]
+            ])
+            user_story_input = gr.Textbox(
+                label="Chatbot input",
+                placeholder="Please type your message here and press Enter to interact with the chatbot :)"
+            )
+        user_story = gr.TextArea(
+            label="User story",
+            interactive=True
+        )
+    user_story_input.submit(
+        fn=user_story_generator,
+        inputs=[
+            user_story_input, user_story_chatbot
+        ],
+        outputs=[
+            user_story, user_story_chatbot, user_story_input
+        ]
+    )
+
+
+with gr.Blocks() as cq_interface:
+    gr.Markdown(
+        """
+        # OntoChat 
+        This is the second step of the demo. Please copy the generated user story from the previous 
+        step and use it here. You can also modify the user story before using it for generating competency questions. 
+        **Recommended prompt workflow:** 
+        1. Obtain competency questions from the user story. 
+        - Zero-shot learning:
+            - Prompt template: Given the user story: {user story}, generate {number} competency questions base on it. 
+        - Few-shot learning (i.e., provide examples to give more instructions on how to generate competency questions):
+            - Prompt template: Here are some good examples of competency questions generated from example data. 
+              Formatted in {"Example data": "Competency questions"}. 
+              {"Yesterday was performed by Armando Rocca.": "Who performs the song?"},
+              {"The Church was built in 1619.": "When (what year) was the building built?"},
+              {"The Church is located in a periurban context.": "In which context is the building located?"},
+              {"The mounting system of the bells is the falling clapper.": "Which is the mounting system of the bell?"}
+        2. Clean and refine competency questions. 
+        - Obtain multiple competency questions. 
+            - Prompt template: Take the generated competency questions and check if any of them can be divided into 
+              multiple questions. If they do, split the competency question into multiple competency questions. If it 
+              does not, leave the competency question as it is. For example, the competency question "Who wrote The 
+              Hobbit and in what year was the book written?" must be split into two competency questions: "Who wrote 
+              the book?" and "In what year was the book written?". Another example is the competency question, "When 
+              was the person born?". This competency question cannot be divided into multiple questions.
+        - Remove specific named entities.
+            - Prompt template: Take the competency questions and check if they contain real-world entities, like 
+              "Freddy Mercury" or "1837". If they do, change those real-world entities from these competency questions 
+              to more general concepts. For example, the competency question "Which is the author of Harry Potter?" 
+              should be changed to "Which is the author of the book?". Similarly, the competency question "Who wrote 
+              the book in 2018?" should be changed to "Who wrote the book, and in what year was the book written?"
+        """
+    )
+
+    with gr.Row():
+        with gr.Column():
+            cq_chatbot = gr.Chatbot([
+                [None, "I am OntoChat, your conversational ontology engineering assistant. Here is the second step of "
+                 "the system. Please give me your user story and tell me how many competency questions you want."]
+            ])
+            cq_input = gr.Textbox(
+                label="Chatbot input",
+                placeholder="Please type your message here and press Enter to interact with the chatbot :)"
+            )
+        cq_output = gr.TextArea(
+            label="Competency questions",
+            interactive=True
+        )
+    cq_input.submit(
+        fn=cq_generator,
+        inputs=[
+            cq_input, cq_chatbot
+        ],
+        outputs=[
+            cq_output, cq_chatbot, cq_input
+        ]
+    )
+
 
 clustering_interface = gr.Interface(
     fn=clustering_generator,
@@ -115,6 +155,6 @@ demo = gr.TabbedInterface(
     ["User Story Generation", "Competency Question Extraction", "Competency Question Analysis"]
 )
 
+
 if __name__ == "__main__":
-    # demo.launch(share=True)
-    demo.launch(share=True)
+    demo.launch()

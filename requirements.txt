@@ -3,4 +3,3 @@ gradio
 scikit-learn
 sentence-transformers
 rdflib
-pymongo
