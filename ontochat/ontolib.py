@@ -9,7 +9,7 @@ from openai import OpenAI
 
 cqe_prompt_a = "You are asked to provide a comprehensive list of competency "\
                "questions describing all the possible requirements that can be "\
-               "addressed by the ontology."
+               "addressed by the ontology described before."
 
 cqt_prompt_a = "You are asked to infer if the ontology described before can "\
                "address the following competency question: \"{}\" "\
@@ -46,12 +46,30 @@ class ChatInterface:
 
 
 def extract_competency_questions(onto_verbalisation: str,
-                                 chat_interface: ChatInterface.chat_completion,
+                                 chat_interface: ChatInterface,
                                  prompt: str = cqe_prompt_a):
-    
+    """
+    Extract competency questions from the verbalisation of an ontology.
+
+    Parameters
+    ----------
+    onto_verbalisation : str
+        A string expressing the ontology verbalisation as output from a
+        supported method in the `verbaliser` module.
+    chat_interface : ChatInterface
+        An instance of a chat interface holding the API session.
+    prompt : str, optional
+        CQ extraction prompt, by default cqe_prompt_a
+
+    Returns
+    -------
+    competency_questions : str
+        A list of competency questions induced from the verbalisation.
+
+    """    
     full_prompt = onto_verbalisation + "\n" + prompt
     conversation_history = [
-        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "system", "content": "You are an ontology expert."},
         {"role": "user", "content": full_prompt}
     ]
 
@@ -63,9 +81,31 @@ def extract_competency_questions(onto_verbalisation: str,
 
 def test_competency_questions(onto_verbalisation: str,
                               competency_questions: list[str],
-                              chat_interface: ChatInterface.chat_completion,
+                              chat_interface: ChatInterface,
                               cq_prompt: str = cqt_prompt_a):
+    """
+    Performs a preliminary test of the ontology to assess whether its
+    verbalisation allows for addressing each competency questions given.
 
+    Parameters
+    ----------
+    onto_verbalisation : str
+        A string expressing the ontology verbalisation as output from a
+        supported method in the `verbaliser` module.
+    competency_questions: list[str]
+        A list of competency questions to use for preliminary testing.
+    chat_interface : ChatInterface
+        An instance of a chat interface holding the API session.
+    prompt : str, optional
+        CQ test prompt, by default cqt_prompt_a
+
+    Returns
+    -------
+    cq_test_dict : dict
+        A dictionary holding an outcome (yes/no) as a preliminary test of each
+        competency question. Keys correspond to CQs.
+
+    """    
     cq_test_dict = {}
     for cq in competency_questions:
         full_prompt = onto_verbalisation + "\n" + cq_prompt.format(cq)
