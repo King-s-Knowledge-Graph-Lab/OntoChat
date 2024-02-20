@@ -21,7 +21,7 @@ class ChatInterface:
     def __init__(self,
                  api_key: str,
                  model_name: str = config.DEFAULT_MODEL,
-                 sampling_seed: int = config.DEFAULT_MODEL,
+                 sampling_seed: int = config.DEFAULT_SEED,
                  temperature: int = config.DEFAULT_TEMPERATURE):
         # Save client configuration for all calls
         self.client = OpenAI(api_key=api_key)
