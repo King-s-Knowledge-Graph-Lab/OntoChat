@@ -25,7 +25,7 @@ class ChatInterface:
                  temperature: int = config.DEFAULT_TEMPERATURE):
         # Save client configuration for all calls
         self.client = OpenAI(api_key=api_key)
-        self.modmodel_nameel = model_name
+        self.model_name = model_name
         self.sampling_seed = sampling_seed
         self.temperature = temperature
 
@@ -42,7 +42,6 @@ class ChatInterface:
             temperature=temperature,
         )
         return completion.choices[0].message.content
-
 
 
 def extract_competency_questions(onto_verbalisation: str,
