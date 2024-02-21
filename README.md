@@ -1,8 +1,8 @@
-# OntoChat
+<div align="center">
+    <img src="assets/title_logo.png" width="96%" height="auto" />
+</div>
 
-<p align="left">
-<img src="assets/ontochat_logo.png" width="150">
-</p>
+# OntoChat
 
 We introduce **OntoChat**, a framework for conversational ontology engineering that supports requirement elicitation, 
 analysis, and testing. By interacting with a conversational agent, users can steer the creation of use cases and the 
