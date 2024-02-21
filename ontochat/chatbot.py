@@ -1,20 +1,28 @@
 from openai import OpenAI
+from openai import APIConnectionError, APITimeoutError, AuthenticationError, RateLimitError
 
-
-MODEL_NAME = "gpt-3.5-turbo"
-TEMPERATURE = 0
-SEED = 1234
+from ontochat.config import DEFAULT_MODEL, DEFAULT_SEED, DEFAULT_TEMPERATURE
 
 
 def chat_completion(api_key, messages):
     client = OpenAI(api_key=api_key)
-    completion = client.chat.completions.create(
-        model=MODEL_NAME,
-        messages=messages,
-        seed=SEED,
-        temperature=TEMPERATURE,
-    )
-    return completion.choices[0].message.content
+    try:
+        response = client.chat.completions.create(
+            model=DEFAULT_MODEL,
+            messages=messages,
+            seed=DEFAULT_SEED,
+            temperature=DEFAULT_TEMPERATURE,
+        )
+    except APITimeoutError as e:
+        return f"Request timed out. Retry your request after a brief wait. Error information: {e}"
+    except APIConnectionError as e:
+        return f"Issue connecting to our services. Check your network settings, proxy configuration, " \
+               f"SSL certificates, or firewall rules. Error information: {e}"
+    except AuthenticationError as e:
+        return f"Your API key or token was invalid, expired, or revoked. Error information: {e}"
+    except RateLimitError as e:
+        return f"You have hit your assigned rate limit. Error information: {e}"
+    return response.choices[0].message.content
 
 
 def build_messages(history):
