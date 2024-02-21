@@ -29,15 +29,8 @@ with gr.Blocks() as user_story_interface:
     with gr.Row():
         with gr.Column():
             user_story_chatbot = gr.Chatbot([
-                [None, "Hello! I am OntoChat, your conversational ontology engineering assistant."],
-                ["I am a domain expert trying to create a user story to be used by ontology engineers. You are the "
-                 "ontology expert. Only ask the following question once I have responded. Ask for the specifications "
-                 "to generate a user story as a user of the system, which should include: 1. The Persona: What are "
-                 "the name, occupation, skills and interests of the user? 2. The Goal: What is the goal of the user? "
-                 "Are they facing specific issues? 3. Example Data: Do you have examples of the specific data "
-                 "available? Make sure you have answers to all three questions before providing a user story. Only "
-                 "ask the next question once I have responded.", "Sure. Let's start with the persona. What are the "
-                 "name, occupations, skills, interests of the user?"]
+                [None, "Hello! I am OntoChat, your conversational ontology engineering assistant. Let's start with the "
+                       "persona. What are the name, occupations, skills, interests of the user?"],
             ])
             user_story_input = gr.Textbox(
                 label="Chatbot input",
@@ -92,6 +85,16 @@ with gr.Blocks() as cq_interface:
         """
     )
 
+    with gr.Group():
+        api_key = gr.Textbox(
+            label="OpenAI API Key",
+            placeholder="If you have set the key in other tabs, you don't have to set it again.",
+            info="Please input your OpenAI API Key if you don't have it set up on your own machine. Please note that "
+                 "the key will only be used for this demo and will not be uploaded or used anywhere else."
+        )
+        api_key_btn = gr.Button(value="Set API Key")
+        api_key_btn.click(fn=set_openai_api_key, inputs=api_key, outputs=api_key)
+
     with gr.Row():
         with gr.Column():
             cq_chatbot = gr.Chatbot([
@@ -126,7 +129,8 @@ clustering_interface = gr.Interface(
                  "the questions before submitting them."
         ),
         gr.Dropdown(
-            choices=["Agglomerative clustering", "HDBSCAN", "LLM clustering"],
+            value="LLM clustering",
+            choices=["LLM clustering", "Agglomerative clustering", "HDBSCAN"],
             label="Clustering method",
             info="Please select the clustering method."
         ),
@@ -162,6 +166,17 @@ with gr.Blocks() as testing_interface:
         This is the final part of OntoChat which performs ontology testing based on the input ontology file and CQs. 
         """
     )
+
+    with gr.Group():
+        api_key = gr.Textbox(
+            label="OpenAI API Key",
+            placeholder="If you have set the key in other tabs, you don't have to set it again.",
+            info="Please input your OpenAI API Key if you don't have it set up on your own machine. Please note that "
+                 "the key will only be used for this demo and will not be uploaded or used anywhere else."
+        )
+        api_key_btn = gr.Button(value="Set API Key")
+        api_key_btn.click(fn=set_openai_api_key, inputs=api_key, outputs=api_key)
+
     ontology_file = gr.File(label="Ontology file")
     ontology_desc = gr.Textbox(
         label="Ontology description",

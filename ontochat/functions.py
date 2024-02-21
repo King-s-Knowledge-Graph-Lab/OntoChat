@@ -16,35 +16,30 @@ def set_openai_api_key(api_key: str):
 
 
 def user_story_generator(message, history):
-    print(history)
-    if len(history) == 1:  # initial round
-        messages = [{
-            "role": "system",
-            "content": "Hello! I am OntoChat, your conversational ontology engineering assistant."
-        }, {
-            "role": "user",
-            "content": "I am a domain expert trying to create a user story to be used by ontology engineers. You are "
-                       "the ontology expert. Only ask the following question once I have responded. Ask for the"
-                       "specifications to generate a user story as a user of the system, which should include: 1. The "
-                       "Persona: What are the name, occupation, skills and interests of the user? 2. The Goal: What is "
-                       "the goal of the user? Are they facing specific issues? 3. Example Data: Do you have examples "
-                       "of the specific data available? Make sure you have answers to all three questions before "
-                       "providing a user story. Only ask the next question once I have responded."
-        }, {
-            "role": "system",
-            "content": "Sure. Let's start with the persona. What are the name, occupations, skills, interests of the user?"
-        }, {
-            "role": "user",
-            "content": message
-        }]
-    else:
-        messages = build_messages(history)
-        messages.append({
-            "role": "user",
-            "content": message
-        })
-    bot_message = chat_completion(openai_api_key, messages)
+    instructions = [{
+        "role": "system",
+        "content": "You are a conversational ontology engineering assistant."
+    }, {
+        "role": "user",
+        "content": "I am a domain expert trying to create a user story to be used by ontology engineers. You are the "
+                   "ontology expert. Only ask the following question once I have responded. Ask for the"
+                   "specifications to generate a user story as a user of the system, which should include: 1. The "
+                   "Persona: What are the name, occupation, skills and interests of the user? 2. The Goal: What is "
+                   "the goal of the user? Are they facing specific issues? 3. Example Data: Do you have examples of "
+                   "the specific data available? Make sure you have answers to all three questions before providing "
+                   "a user story. Only ask the next question once I have responded. And you should also ask questions "
+                   "to elaborate on more information after the user provides the initial information, and ask for "
+                   "feedback and suggestions after the user story is generated."
+    }]
+    messages = build_messages(history)
+    messages.append({
+        "role": "user",
+        "content": message
+    })
+    bot_message = chat_completion(openai_api_key, instructions + messages)
+    # post-processing response
     history.append([message, bot_message])
+    print(history)
     return bot_message, history, ""
 
 
