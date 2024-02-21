@@ -18,9 +18,24 @@ If you would like to deploy this demo locally,
 OntoChat has been hosted in HF Spaces at: [https://huggingface.co/spaces/b289zhan/OntoChat](https://huggingface.co/spaces/b289zhan/OntoChat).
 
 ## Note
-- The ontology testing part has been tested with the [Music Meta Ontology](https://github.com/polifonia-project/music-meta-ontology) and works well.
+- A first evaluation of the framework was performed to reproduce the engineering efforts behind the [Music Meta Ontology](https://github.com/polifonia-project/music-meta-ontology).
 
 ## TODO
 - Improve the verbaliser (classes, named entities, and relations might be messy in some cases)
 - Optimize clustering visualization (maybe only keep LLM lcustering)
 - Add [flagging](https://www.gradio.app/docs/flagging), e.g., [`HuggingFaceDatasetSaver`](https://www.gradio.app/docs/flagging#hugging-face-dataset-saver-header)
+
+## Acknowledgement
+
+This project acknoledges [Polifonia](https://polifonia-project.eu), and has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 101004746. We also thank all the evaluators that contributed feedback on the effectiveness of the tool and provided their experience of use.
+
+
+## License
+
+Copyright 2024 OntoChat maintainers
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
