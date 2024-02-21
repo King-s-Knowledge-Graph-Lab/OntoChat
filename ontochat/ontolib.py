@@ -95,7 +95,7 @@ def test_competency_questions(onto_verbalisation: str,
         A list of competency questions to use for preliminary testing.
     chat_interface : ChatInterface
         An instance of a chat interface holding the API session.
-    prompt : str, optional
+    cq_prompt : str, optional
         CQ test prompt, by default cqt_prompt_a
 
     Returns
