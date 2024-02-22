@@ -74,6 +74,16 @@ def cq_generator(message, history):
     return bot_message, history, ""
 
 
+def load_example_user_story():
+    """
+    load example user story
+    TODO: more examples
+    :return:
+    """
+    f = open("data/Linka#1_MusicKnowledge.md", "r")
+    return f.read()
+
+
 def clustering_generator(cqs, cluster_method, n_clusters):
     """
 

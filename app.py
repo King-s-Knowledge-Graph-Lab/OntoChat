@@ -106,6 +106,20 @@ with gr.Blocks() as cq_interface:
                 label="Chatbot input",
                 placeholder="Please type your message here and press Enter to interact with the chatbot :)"
             )
+            gr.Markdown(
+                """
+                ### User story examples
+                Click the button below to use an example user story from 
+                [Linka](https://github.com/polifonia-project/stories/tree/main/Linka_Computer_Scientist) in Polifonia.
+                """
+            )
+            # TODO: could add more examples using Dropdown or CheckboxGroup
+            example_btn = gr.Button(value="Use example user story")
+            example_btn.click(
+                fn=load_example_user_story,
+                inputs=[],
+                outputs=[cq_input]
+            )
         cq_output = gr.TextArea(
             label="Competency questions",
             interactive=True
