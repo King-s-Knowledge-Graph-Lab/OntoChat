@@ -27,7 +27,9 @@ def user_story_generator(message, history):
                    "Persona: What are the name, occupation, skills and interests of the user? 2. The Goal: What is "
                    "the goal of the user? Are they facing specific issues? 3. Example Data: Do you have examples of "
                    "the specific data available? Make sure you have answers to all three questions before providing "
-                   "a user story. Only ask the next question once I have responded. And you should also ask questions "
+                   "a user story. The user story should be written in the following structure: title, persona, goal, "
+                   "scenario (where the user could use a structured knowledge base to help with their work), and "
+                   "example data. Only ask the next question once I have responded. And you should also ask questions "
                    "to elaborate on more information after the user provides the initial information, and ask for "
                    "feedback and suggestions after the user story is generated."
     }]
@@ -37,9 +39,7 @@ def user_story_generator(message, history):
         "content": message
     })
     bot_message = chat_completion(openai_api_key, instructions + messages)
-    # post-processing response
     history.append([message, bot_message])
-    print(history)
     return bot_message, history, ""
 
 
@@ -83,25 +83,35 @@ def cq_generator(message, history):
     :param history:
     :return:
     """
-    if (len(history)) == 1:  # initial round
-        messages = [
-            {
-                "role": "system",
-                "content": "I am OntoChat, your conversational ontology engineering assistant. Here is the second step "
-                           "of the system. Please give me your user story and tell me how many competency questions "
-                           "you want."
-            }, {
-                "role": "user",
-                "content": message
-            }
-        ]
-    else:
-        messages = build_messages(history)
-        messages.append({
-            "role": "user",
-            "content": message
-        })
-    bot_message = chat_completion(openai_api_key, messages)
+    instructions = [{
+        "role": "system",
+        "content": "You are a conversational ontology engineering assistant."
+    }, {
+        "role": "user",
+        "content": "Here are instructions for you on how to generate high-quality competency questions. First, here "
+                   "are some good examples of competency questions generated from example data. Who performs the song? "
+                   "from the data Yesterday was performed by Armando Rocca, When (what year) was the building built? "
+                   "from the data The Church was built in 1619, In which context is the building located? from the "
+                   "data The Church is located in a periurban context. Second, how to make them less complex. Take the "
+                   "generated competency questions and check if any of them can be divided into multiple questions. If "
+                   "they do, split the competency question into multiple competency questions. If it does not, leave "
+                   "the competency question as it is. For example, the competency question Who wrote The Hobbit and in "
+                   "what year was the book written? must be split into two competency questions: Who wrote the book? "
+                   "and In what year was the book written?. Another example is the competency question, When was the "
+                   "person born?. This competency question cannot be divided into multiple questions. Third, how to "
+                   "remove real entities to abstract them. Take the competency questions and check if they contain "
+                   "real-world entities, like Freddy Mercury or 1837. If they do, change those real-world entities "
+                   "from these competency questions to more general concepts. For example, the competency question "
+                   "Which is the author of Harry Potter? should be changed to Which is the author of the book?. "
+                   "Similarly, the competency question Who wrote the book in 2018? should be changed to Who wrote the "
+                   "book, and in what year was the book written?"
+    }]
+    messages = build_messages(history)
+    messages.append({
+        "role": "user",
+        "content": message
+    })
+    bot_message = chat_completion(openai_api_key, instructions + messages)
     history.append([message, bot_message])
     return bot_message, history, ""
 

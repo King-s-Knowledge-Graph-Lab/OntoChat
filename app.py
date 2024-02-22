@@ -68,33 +68,9 @@ with gr.Blocks() as cq_interface:
     gr.Markdown(
         """
         # OntoChat 
-        This is the second step of OntoChat. Please copy the generated user story from the previous 
-        step and use it here. You can also modify the user story before using it for generating competency questions. 
-        **Recommended prompt workflow:** 
-        1. Obtain competency questions from the user story. 
-        - Zero-shot learning:
-            - Prompt template: Given the user story: {user story}, generate {number} competency questions base on it. 
-        - Few-shot learning (i.e., provide examples to give more instructions on how to generate competency questions):
-            - Prompt template: Here are some good examples of competency questions generated from example data. 
-              Formatted in {"Example data": "Competency questions"}. 
-              {"Yesterday was performed by Armando Rocca.": "Who performs the song?"},
-              {"The Church was built in 1619.": "When (what year) was the building built?"},
-              {"The Church is located in a periurban context.": "In which context is the building located?"},
-              {"The mounting system of the bells is the falling clapper.": "Which is the mounting system of the bell?"}
-        2. Clean and refine competency questions. 
-        - Obtain multiple competency questions. 
-            - Prompt template: Take the generated competency questions and check if any of them can be divided into 
-              multiple questions. If they do, split the competency question into multiple competency questions. If it 
-              does not, leave the competency question as it is. For example, the competency question "Who wrote The 
-              Hobbit and in what year was the book written?" must be split into two competency questions: "Who wrote 
-              the book?" and "In what year was the book written?". Another example is the competency question, "When 
-              was the person born?". This competency question cannot be divided into multiple questions.
-        - Remove specific named entities.
-            - Prompt template: Take the competency questions and check if they contain real-world entities, like 
-              "Freddy Mercury" or "1837". If they do, change those real-world entities from these competency questions 
-              to more general concepts. For example, the competency question "Which is the author of Harry Potter?" 
-              should be changed to "Which is the author of the book?". Similarly, the competency question "Who wrote 
-              the book in 2018?" should be changed to "Who wrote the book, and in what year was the book written?"
+        This is the second step of OntoChat. This functionality provides support for the extraction of competency 
+        questions from a user story. Please, provide a user story to start extracting competency questions with the 
+        chatbot, or simply load the example story below.
         """
     )
 
@@ -112,7 +88,8 @@ with gr.Blocks() as cq_interface:
         with gr.Column():
             cq_chatbot = gr.Chatbot([
                 [None, "I am OntoChat, your conversational ontology engineering assistant. Here is the second step of "
-                 "the system. Please give me your user story and tell me how many competency questions you want."]
+                       "the system. Please give me your user story and tell me how many competency questions you want "
+                       "me to generate from the user story."]
             ])
             cq_input = gr.Textbox(
                 label="Chatbot input",
