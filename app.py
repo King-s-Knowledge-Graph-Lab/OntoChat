@@ -29,8 +29,9 @@ with gr.Blocks() as user_story_interface:
     with gr.Row():
         with gr.Column():
             user_story_chatbot = gr.Chatbot([
-                [None, "Hello! I am OntoChat, your conversational ontology engineering assistant. Let's start with the "
-                       "persona. What are the name, occupations, skills, interests of the user?"],
+                [None, "Hello! I am OntoChat, your conversational ontology engineering assistant. I will guide you step"
+                       " by step in the creation of a user story. Let's start with the persona. What are the name, "
+                       "occupations, skills, interests of the user?"],
             ])
             user_story_input = gr.Textbox(
                 label="Chatbot input",
