@@ -37,6 +37,18 @@ with gr.Blocks() as user_story_interface:
                 label="Chatbot input",
                 placeholder="Please type your message here and press Enter to interact with the chatbot :)"
             )
+            # gr.Markdown(
+            #     """
+            #     ### User story generation prompt
+            #     Click the button below to use a user story generation prompt that provides better instructions to the chatbot.
+            #     """
+            # )
+            # prompt_btn = gr.Button(value="User story generation prompt")
+            # prompt_btn.click(
+            #     fn=load_user_story_prompt,
+            #     inputs=[],
+            #     outputs=[user_story_input]
+            # )
         user_story = gr.TextArea(
             label="User story",
             interactive=True
@@ -145,18 +157,14 @@ clustering_interface = gr.Interface(
         ),
         gr.Dropdown(
             value="LLM clustering",
-            choices=["LLM clustering", "Agglomerative clustering", "HDBSCAN"],
+            choices=["LLM clustering", "Agglomerative clustering"],
             label="Clustering method",
             info="Please select the clustering method."
         ),
-        gr.Slider(
-            minimum=2,
-            maximum=50,
-            step=1,
-            label="Number of clusters",
-            info="Please select the number of clusters you want to generate. Please note that for HDBSCAN, this value "
-                 "is used as the minimum size of a cluster. And please do not input a number that exceeds the total "
-                 "number of competency questions."
+        gr.Textbox(
+            label="Number of clusters (optional for LLM clustering)",
+            info="Please input the number of clusters you want to generate. And please do not input a number that "
+                 "exceeds the total number of competency questions."
         )
     ],
     outputs=[

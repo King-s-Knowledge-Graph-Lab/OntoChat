@@ -26,7 +26,7 @@ def preprocess_competency_questions(cqs):
     # # keep index
     # cqs = [re.split(r'\.\s', cq, 1) for cq in cqs]
     # cqs = [{cq[0]: cq[1]} for cq in cqs]
-    cqs = [re.split(r'\.\s', cq, 1)[1] for cq in cqs]
+    # cqs = [re.split(r'\.\s', cq, 1)[1] for cq in cqs]
 
     # clean
     cleaned_cqs = []
@@ -139,81 +139,6 @@ def plot_dendrogram(model, **kwargs):
     return Image.open(buf)
 
 
-def hdbscan_clustering(cqs, embeddings, min_cluster_size=2):
-    """
-
-    :param cqs:
-    :param embeddings:
-    :param min_cluster_size:
-    :return:
-    """
-    clusterer = HDBSCAN(
-        min_cluster_size=min_cluster_size
-    )
-    clusterer.fit(embeddings)
-    cluster_assignment = clusterer.labels_
-
-    clustered_cqs = defaultdict(list)
-    for sentence_id, cluster_id in enumerate(cluster_assignment):
-        clustered_cqs[str(cluster_id)].append(cqs[sentence_id])
-
-    fig, axis = plt.subplots(1, 1)
-    image = plot_hdbscan_scatter(embeddings, cluster_assignment, parameters={"scale": 3, "eps": 0.9}, ax=axis)
-    return clustered_cqs, image
-
-
-def plot_hdbscan_scatter(data, labels, probabilities=None, parameters=None, ground_truth=False, ax=None):
-    """
-    source: https://scikit-learn.org/stable/auto_examples/cluster/plot_hdbscan.html
-
-    :param data:
-    :param labels:
-    :param probabilities:
-    :param parameters:
-    :param ground_truth:
-    :param ax:
-    :return:
-    """
-    if ax is None:
-        _, ax = plt.subplots(figsize=(10, 4))
-    labels = labels if labels is not None else np.ones(data.shape[0])
-    probabilities = probabilities if probabilities is not None else np.ones(data.shape[0])
-    # Black removed and is used for noise instead.
-    unique_labels = set(labels)
-    colors = [plt.cm.Spectral(each) for each in np.linspace(0, 1, len(unique_labels))]
-    # The probability of a point belonging to its labeled cluster determines
-    # the size of its marker
-    proba_map = {idx: probabilities[idx] for idx in range(len(labels))}
-    for k, col in zip(unique_labels, colors):
-        if k == -1:
-            # Black used for noise.
-            col = [0, 0, 0, 1]
-
-        class_index = np.where(labels == k)[0]
-        for ci in class_index:
-            ax.plot(
-                data[ci, 0],
-                data[ci, 1],
-                "x" if k == -1 else "o",
-                markerfacecolor=tuple(col),
-                markeredgecolor="k",
-                markersize=4 if k == -1 else 1 + 5 * proba_map[ci],
-            )
-    n_clusters_ = len(set(labels)) - (1 if -1 in labels else 0)
-    preamble = "True" if ground_truth else "Estimated"
-    title = f"{preamble} number of clusters: {n_clusters_}"
-    if parameters is not None:
-        parameters_str = ", ".join(f"{k}={v}" for k, v in parameters.items())
-        title += f" | {parameters_str}"
-    ax.set_title(title)
-    plt.tight_layout()
-    fig = plt.gcf()
-    buf = io.BytesIO()
-    fig.savefig(buf)
-    buf.seek(0)
-    return Image.open(buf)
-
-
 def response_parser(response):
     try:
         response = ast.literal_eval(response)
@@ -222,7 +147,7 @@ def response_parser(response):
     return response
 
 
-def llm_cq_clustering(cqs: str, n_clusters: int, api_key, paraphrase_detection=False):
+def llm_cq_clustering(cqs, n_clusters, api_key, paraphrase_detection=False):
     """
 
     :param cqs:
@@ -241,21 +166,31 @@ def llm_cq_clustering(cqs: str, n_clusters: int, api_key, paraphrase_detection=F
                    "Return a Python list of duplicate competency questions.".format(cqs)
 
         conversation_history.append({"role": "user", "content": prompt_1})
-        response = chat_completion(conversation_history)
+        response = chat_completion(api_key, conversation_history)
         print("{} CQs remaining after paraphrase detection.".format(len(cqs) - len(response_parser(response))))
 
         # 2. clustering
-        prompt_2 = f"Clustering the competency questions into {n_clusters} clusters based on their topics. " \
-                   "Keep the granularity of the topic in each cluster at a similar level. " \
-                   "Return in JSON format, such as: {'cluster 1 topic': " \
-                   "['competency question 1', 'competency question 2']}:"
+        if n_clusters:
+            prompt_2 = f"Clustering the competency questions into {n_clusters} clusters based on their topics. " \
+                        "Keep the granularity of the topic in each cluster at a similar level. " \
+                        "Return in JSON format, such as: {'cluster 1 topic': " \
+                        "['competency question 1', 'competency question 2']}:"
+        else:
+            prompt_2 = f"Clustering the competency questions into clusters based on their topics. " \
+                       "Keep the granularity of the topic in each cluster at a similar level. " \
+                       "Return in JSON format, such as: {'cluster 1 topic': " \
+                       "['competency question 1', 'competency question 2']}:"
         conversation_history.append({"role": "assistant", "content": response})  # previous response
         conversation_history.append({"role": "user", "content": prompt_2})
-        response = chat_completion(conversation_history)
+        response = chat_completion(api_key, conversation_history)
         # print("Output is: \"{}\"".format(response))
 
     else:  # clustering only
-        prompt_2 = f"Given the competency questions: {cqs}, clustering them into {n_clusters} clusters based on the topics."
+        if n_clusters:
+            prompt_2 = f"Given the competency questions: {cqs}, clustering them into {n_clusters} clusters based on " \
+                       f"the topics."
+        else:
+            prompt_2 = f"Given the competency questions: {cqs}, clustering them into clusters based on the topics."
         prompt_2 += "Keep the granularity of the topic in each cluster at a similar level. " \
                     "Return in JSON format, such as: {'cluster 1 topic': " \
                     "['competency question 1', 'competency question 2']}:"

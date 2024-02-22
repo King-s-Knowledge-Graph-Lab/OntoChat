@@ -5,7 +5,7 @@ Interface functions
 import json
 
 from ontochat.chatbot import chat_completion, build_messages
-from ontochat.analysis import compute_embeddings, agglomerative_clustering, hdbscan_clustering, llm_cq_clustering
+from ontochat.analysis import compute_embeddings, agglomerative_clustering, llm_cq_clustering
 from ontochat.verbaliser import verbalise_ontology
 
 
@@ -41,6 +41,38 @@ def user_story_generator(message, history):
     history.append([message, bot_message])
     print(history)
     return bot_message, history, ""
+
+
+# def load_user_story_prompt():
+#     """
+#
+#     :return:
+#     """
+#     prompt = """
+#     Now create the full user story.The user story should be written in the following structure:
+#
+#     Title: Which topics are covered by the user story?
+#
+#     Persona: What is the occupation of the user and what are their goals?
+#
+#     Goal:
+#     Keywords: provide 5-10 keywords related to the user story
+#     Provide the issues a user is facing and how our application can help reach their goals.
+#
+#     Scenario:
+#     Write out a scenario, where the user could use a structured knowledge base to help with their work.
+#
+#     Example Data:
+#
+#     Think of a list of requirements and provide example data for each requirement. Structure the example data by requirements
+#     Example data should by simple sentences.
+#     These are possible formats:
+#     One sonata is a “Salmo alla Romana”.
+#     A concert played in San Pietro di Sturla for exhibition was recorded by ethnomusicologist Mauro Balma in 1994.
+#     The Church of San Pietro di Sturla is located in Carasco, Genova Province.
+#     The Sistema Ligure is described in the text “Campanari, campane e campanili di Liguria” By Mauro Balma, 1996.
+#     """
+#     return prompt
 
 
 def cq_generator(message, history):
@@ -89,15 +121,16 @@ def clustering_generator(cqs, cluster_method, n_clusters):
 
     :param cqs:
     :param cluster_method:
-    :param n_clusters:
+    :param n_clusters: default ''
     :return:
     """
+    if n_clusters:
+        n_clusters = int(n_clusters)
+
     cqs, cq_embeddings = compute_embeddings(cqs)
 
     if cluster_method == "Agglomerative clustering":
         cq_clusters, cluster_image = agglomerative_clustering(cqs, cq_embeddings, n_clusters)
-    elif cluster_method == "HDBSCAN":
-        cq_clusters, cluster_image = hdbscan_clustering(cqs, cq_embeddings, n_clusters)
     else:  # cluster_method == "LLM clustering"
         cq_clusters, cluster_image = llm_cq_clustering(cqs, n_clusters, openai_api_key)
 
