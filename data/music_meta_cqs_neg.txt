@@ -1,0 +1,28 @@
+In which year did a music artist achieve their highest popularity within a music ensemble?
+To which record label is a music ensemble currently signed?
+Which music critic gave a music artist a negative review?
+For which category did a music artist lose an award?
+Which music artists are considered rivals of a music artist?
+To which music artist has a music artist been compared?
+Is a music artist currently touring?
+What is the title of a music artist's most popular song?
+Which language is most used in a music artist's lyrics?
+Does a music algorithm favor a specific genre?
+What was the intended audience for a musical piece?
+Which emotions does the musical piece attempt to evoke?
+Who are the parents of a music artist?
+Where did a music artist study?
+Is a music work associated to any case of plagiarism?
+On which streaming platforms can I find a recording?
+How many listeners did a piece receive in a specific country?
+Is a piece similar to another?
+When was the album first sold?
+Who is the lead of a music group?
+Was a song wronly attributed to an artist?
+What is the cover art of a release?
+What is the sampling rate of an audio recording?
+In which language has a song been translated?
+What is the ISNI code associated to a music artist?
+What is the length of a recording in seconds?
+Is there any recommendation associated to an album?
+What is the current average price of a release?
