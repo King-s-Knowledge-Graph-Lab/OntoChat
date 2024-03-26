@@ -25,9 +25,19 @@ OntoChat has been hosted in HF Spaces at: [https://huggingface.co/spaces/b289zha
 - Optimize clustering visualization (maybe only keep LLM lcustering)
 - Add [flagging](https://www.gradio.app/docs/flagging), e.g., [`HuggingFaceDatasetSaver`](https://www.gradio.app/docs/flagging#hugging-face-dataset-saver-header)
 
+## Authors and attribution
+```
+@article{zhang2024ontochat,
+  title={OntoChat: a Framework for Conversational Ontology Engineering using Language Models},
+  author={Zhang, Bohui and Carriero, Valentina Anita and Schreiberhuber, Katrin and Tsaneva, Stefani and Gonz{\'a}lez, Luc{\'\i}a S{\'a}nchez and Kim, Jongmo and de Berardinis, Jacopo},
+  journal={arXiv preprint arXiv:2403.05921},
+  year={2024}
+}
+```
+
 ## Acknowledgement
 
-This project acknoledges [Polifonia](https://polifonia-project.eu), and has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 101004746. We also thank all the evaluators that contributed feedback on the effectiveness of the tool and provided their experience of use.
+This project acknoledges [Polifonia](https://polifonia-project.eu), and has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 101004746. We also thank all the evaluators that contributed feedback on the effectiveness of the tool and provided their experience of use. We also thank all the evaluators for contributing to the project.
 
 
 ## License
