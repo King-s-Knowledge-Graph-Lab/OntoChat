@@ -20,9 +20,6 @@ release-number: v1.0.0
 resource: https://github.com/King-s-Knowledge-Graph-Lab/OntoChat
 release-link: https://github.com/King-s-Knowledge-Graph-Lab/OntoChat/releases/tag/v1.0.0
 changelog: https://github.com/King-s-Knowledge-Graph-Lab/OntoChat/releases
-related-components:
-  - extends:
-    - OntoChat
 licence:
   - MIT
 
@@ -36,3 +33,10 @@ contributors:
 credits: "This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement N. 101004746"
 
 ---
+
+# OntoChat
+
+We introduce **OntoChat**, a framework for conversational ontology engineering that supports requirement elicitation, 
+analysis, and testing. By interacting with a conversational agent, users can steer the creation of use cases and the 
+extraction of competency questions, while receiving computational support to analyse the overall requirements and test 
+early versions of the resulting ontologies.
