@@ -15,7 +15,7 @@ If you would like to deploy this demo locally,
 2. Run `app.py`.
 
 ## Hosting in Hugging Face Spaces
-OntoChat has been hosted in HF Spaces at: [[https://huggingface.co/spaces/b289zhan/OntoChat](https://huggingface.co/spaces/1hangzhao/OntoChat)]
+OntoChat has been hosted in HF Spaces at: [[https://huggingface.co/spaces/1hangzhao/OntoChat](https://huggingface.co/spaces/1hangzhao/OntoChat)]
 
 ## Note
 - A first evaluation of the framework was performed to reproduce the engineering efforts behind the [Music Meta Ontology](https://github.com/polifonia-project/music-meta-ontology).
