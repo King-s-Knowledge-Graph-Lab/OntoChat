@@ -15,7 +15,7 @@ If you would like to deploy this demo locally,
 2. Run `app.py`.
 
 ## Hosting in Hugging Face Spaces
-OntoChat has been hosted in HF Spaces at: [https://huggingface.co/spaces/b289zhan/OntoChat](https://huggingface.co/spaces/b289zhan/OntoChat).
+OntoChat has been hosted in HF Spaces at: [[https://huggingface.co/spaces/b289zhan/OntoChat](https://huggingface.co/spaces/1hangzhao/OntoChat)]
 
 ## Note
 - A first evaluation of the framework was performed to reproduce the engineering efforts behind the [Music Meta Ontology](https://github.com/polifonia-project/music-meta-ontology).
@@ -31,6 +31,16 @@ OntoChat has been hosted in HF Spaces at: [https://huggingface.co/spaces/b289zha
   title={OntoChat: a Framework for Conversational Ontology Engineering using Language Models},
   author={Zhang, Bohui and Carriero, Valentina Anita and Schreiberhuber, Katrin and Tsaneva, Stefani and Gonz{\'a}lez, Luc{\'\i}a S{\'a}nchez and Kim, Jongmo and de Berardinis, Jacopo},
   journal={arXiv preprint arXiv:2403.05921},
+  year={2024}
+}
+
+@inproceedings{zhao2024improving,
+  title={Improving Ontology Requirements Engineering with OntoChat and Participatory Prompting},
+  author={Zhao, Yihang and Zhang, Bohui and Hu, Xi and Ouyang, Shuyin and Kim, Jongmo and Jain, Nitisha and de Berardinis, Jacopo and Mero{\~n}o-Pe{\~n}uela, Albert and Simperl, Elena},
+  booktitle={Proceedings of the AAAI Symposium Series},
+  volume={4},
+  number={1},
+  pages={253--257},
   year={2024}
 }
 ```
