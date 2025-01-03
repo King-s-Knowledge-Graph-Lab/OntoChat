@@ -1,4 +1,4 @@
-# Ontology User Story Generation Prompts and Examples
+# [PID7]([https://github.com/King-s-Knowledge-Graph-Lab/OntoChat/blob/main/assets/user_study/Instructions_on_How_to_Write_Ontology_User_Stories.md](https://github.com/King-s-Knowledge-Graph-Lab/OntoChat/blob/main/assets/user_study/Demographic_Information_of_Participants.md)) User Goal Description Generation Illustrative Example
 
 ## Step 1 - Query Initiation
 
