@@ -54,34 +54,10 @@ PID7 found this response logical, clear, and actionable, stating:
 
 > *"Good!"*
 
-After obtaining user satisfaction for the current task, participants are guided to the next stage of user story generation, repeating the iterative process for all subsequent steps.
-
-## Data Analysis
-
-Following the user study, ten videos were manually transcribed, and the data was organized into three primary sections aligned with the user story template: **"Persona," "Goal,"** and **"Scenario."** The coding process employed a combination of top-down and bottom-up approaches, as described by Gu et al. \cite{gu2014code}. Overlapping codes were used to capture the multifaceted nature of user queries. To ensure reliability, the initial coding was revisited at a later stage, with any discrepancies addressed through iterative revisions.
-
-## Results
-
-The full prompt templates for each stage of story writing are accessible online:
-
-[User Needs for the LLM-Assisted Task](https://github.com/King-s-Knowledge-Graph-Lab/OntoChat/blob/main/assets/user_study/User_Needs_for_the_LLM_assisted_Task_Assisting_in_User_Story_Creation.md)
-
-### Example Insights
-Continuing with the example script of PID7 provided above, where PID7 expressed satisfaction by saying, "Well done!" to the generated story, this demonstrates that LLMs have two key potentials for supporting story creation:
+After obtaining user satisfaction for the current task, it demonstrates that LLMs have two key potentials for supporting story creation:
 
 1. Generating clear **USER GOAL DESCRIPTIONS**.
 2. Providing a sequence of practical **ACTIONS** to achieve the goal.
-
-The final identification of LLM potentials for supporting story creation was based on feedback from various participants and the scenarios they encountered. This led to the extension of the original three supporting tasks—**Persona, User Goal, and Scenarios**—to eight:
-
-- Persona
-- User Goal
-- Actions
-- Keywords
-- Current Methods
-- Challenges
-- New Methods
-- Outcomes
 
 ### Final Prompt Templates
 
