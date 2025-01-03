@@ -1,5 +1,7 @@
 # [PID7]([https://github.com/King-s-Knowledge-Graph-Lab/OntoChat/blob/main/assets/user_study/Instructions_on_How_to_Write_Ontology_User_Stories.md](https://github.com/King-s-Knowledge-Graph-Lab/OntoChat/blob/main/assets/user_study/Demographic_Information_of_Participants.md)) User Goal Description Generation Illustrative Example
 
+[PID7]([https://github.com/King-s-Knowledge-Graph-Lab/OntoChat/blob/main/assets/user_study/Instructions_on_How_to_Write_Ontology_User_Stories.md](https://github.com/King-s-Knowledge-Graph-Lab/OntoChat/blob/main/assets/user_study/Demographic_Information_of_Participants.md))
+
 ## Step 1 - Query Initiation
 
 Participants were first instructed on how to write an ontology user story, with the instructions available online.
