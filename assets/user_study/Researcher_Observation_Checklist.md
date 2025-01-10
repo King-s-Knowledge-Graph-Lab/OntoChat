@@ -1,7 +1,6 @@
 # Researcher Observation Checklist Template (For Each Participant)
 
-**SHA256 Unique Code for this Participant**:  
-[Write the unique code here]
+**SHA256 Unique Code for this Participant**: [unique code]
 
 | **Different Steps for Writing a User Story** | **Locate Template (Yes/No)** | **Select Template (Yes/No)** | **Edit Placeholders (Yes/No)** | **Submit Template (Yes/No)** | **Challenges Encountered** |
 |---------------------------------------------|--------------------------------|------------------------------|--------------------------------|------------------------------|-----------------------------|
