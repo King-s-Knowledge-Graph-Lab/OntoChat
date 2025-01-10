@@ -1,22 +1,20 @@
 # Demographic Information of User-Evaluation Participants
 
-## Experience with Ontology Construction
-12.5% of participants reported being experts in ontology construction, 25% as advanced, 12.5% as intermediate, 18.8% as beginners, and 31.3% reported having no experience.
-
-## Familiarity with AI Chatbots
-18.8% of participants reported being extremely familiar with AI chatbots, 56.3% as very familiar, 18.8% as moderately familiar, 6.3% as slightly familiar, and none reported being not familiar.
-
-## Familiarity with Ontology User Stories
-6.3% of participants reported being extremely familiar with ontology user stories, 12.5% as very familiar, 25% as moderately familiar, 25% as slightly familiar, and 31.3% reported no familiarity.
-
-## Current or Most Recent Professional Occupation
-Participants include CEOs, IT consultants, master's students, PhD researchers, PhD students, and researchers, with specific mentions of biology and ontology-related roles.
-
-## Current or Most Recent Role in Ontology Engineering Project
-Roles include AI scientists, domain experts, information architects, ontology engineers, and advisors, with expertise spanning biology, technology, and policy.
-
-## Current or Most Recent Ontology Project
-Projects cover diverse areas such as Dutch Police SEMA MIB, clinical data transformation, creative arts therapy with GenAI, data modeling agents, biology teaching, website accessibility, policy analysis, Wikidata content gaps, and Hector Berlioz ontology graphs.
-
-## Domains Covered by Current or Most Recent Ontology Projects
-Domains include government and security, healthcare, human-computer interaction, conversational agents, biology, telecommunication, policy analysis, NLP, electrical systems, space, classical music, and citizen science.
+| PID | Current or Most Recent Professional Occupation | Current or Most Recent Role in Ontology Engineering Project | Current or Most Recent Ontology Project | Domains Covered by Ontology Project               | Experience with Ontology Construction | Familiarity with AI Chatbots       | Familiarity with Ontology User Stories |
+|-----|-----------------------------------------------|------------------------------------------------------------|-----------------------------------------|--------------------------------------------------|---------------------------------------|-----------------------------------|--------------------------------------|
+| 1   | Researcher                                    | Ontology Engineer                                          | OntoChat                                | Ontology Engineering                              | 5 - Expert                            | 3 - Moderately familiar            | 5 - Extremely familiar              |
+| 2   | PhD Student                                   | Domain Expert                                              | Exploring GenAI with Creative Arts Therapists | Human-Computer Interaction                     | 1 - No experience                     | 3 - Moderately familiar            | 1 - Not familiar                   |
+| 3   | PhD Student                                   | Domain Expert in NLP and Ontology Engineer                 | I've used knowledge graphs to enhance language models | NLP, LLMs, Safety                          | 1 - No experience                     | 4 - Very familiar                  | 1 - Not familiar                   |
+| 4   | Researcher                                    | Domain Expert                                              | Wikidata Content Gaps                   | Citizen Science                                  | 2 - Beginner                          | 3 - Moderately familiar            | 2 - Slightly familiar              |
+| 5   | PhD Student                                   | Domain Expert                                              | Building Ontology Graph for Hector Berlioz | Classical Music                                  | 4 - Advanced                          | 4 - Very familiar                  | 1 - Not familiar                   |
+| 6   | Software Engineer                             | Software Engineer                                          | Making Website Accessible               | Software Engineering Front-End Inclusive Designs | 1 - No experience                     | 4 - Very familiar                  | 2 - Slightly familiar              |
+| 7   | PhD Student                                   | Domain Expert                                              | LLM                                      | NLP                                              | 1 - No experience                     | 4 - Very familiar                  | 3 - Moderately familiar            |
+| 8   | IT Consultant                                 | Data Engineering                                           | Electrical Domain - CIM IEC Ontology    | Electrical Domain                                | 3 - Intermediate                      | 4 - Very familiar                  | 3 - Moderately familiar            |
+| 9   | PhD Student                                   | AI Scientist                                               | Developing Agents for Data Modelling    | Conversational Agents, Wikidata                 | 2 - Beginner                          | 5 - Extremely familiar             | 2 - Slightly familiar              |
+| 10  | Master Student in Biology                     | Domain Expert in Biology                                   | Biology Teaching                        | Biology                                          | 1 - No experience                     | 2 - Slightly familiar              | 1 - Not familiar                   |
+| 11  | Data Scientist                                | Ontology Engineer                                          | Transform Clinical Data                 | Healthcare                                       | 3 - Intermediate                      | 4 - Very familiar                  | 1 - Not familiar                   |
+| 12  | Master's Student                              | Domain Expert and Ontology Designer                        | Policy Analysis Project                 | Policy Analysis                                  | 2 - Beginner                          | 4 - Very familiar                  | 2 - Slightly familiar              |
+| 13  | Professor                                     | Advisor to Ontology Engineers                              | 3 Running Projects                      | Space Industry                                   | 5 - Expert                            | 5 - Extremely familiar             | 4 - Very familiar                  |
+| 14  | Company CEO                                   | Ontology Creator                                           | Test Environment Ontology Project       | Electronic Board Testing                         | 4 - Advanced                          | 4 - Very familiar                  | 3 - Moderately familiar            |
+| 15  | Lead Architect                                | Information Architect                                      | Dutch Police SEMA MIB                   | Government, Security, Intelligence               | 4 - Advanced                          | 5 - Extremely familiar             | 3 - Moderately familiar            |
+| 16  | PhD Researcher                                | Domain Expert                                              | Knowledge Engineering, Telecommunications | Telecommunication Sector                        | 4 - Advanced                          | 4 - Very familiar                  | 4 - Very familiar                  |
