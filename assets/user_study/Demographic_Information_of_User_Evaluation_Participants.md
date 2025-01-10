@@ -1,7 +1,5 @@
 # Demographic Information of User-Evaluation Participants
 
-# Demographic Information of User-Evaluation Participants
-
 | PID | Current or Most Recent Professional Occupation | Current or Most Recent Role in Ontology Engineering Project | Current or Most Recent Ontology Project                              | Domains Covered by Ontology Project               | Experience with Ontology Construction | Familiarity with AI Chatbots       | Familiarity with Ontology User Stories |
 |-----|-------------------------------------------------|------------------------------------------------------------|-----------------------------------------------------------------------|--------------------------------------------------|---------------------------------------|-----------------------------------|--------------------------------------|
 | 1   | Researcher                                      | Ontology Engineer                                          | Developing Ontologies for Informed Consent in Smart Cities            | Ontology Engineering and Smart Cities             | 5 - Expert                            | 3 - Moderately familiar            | 5 - Extremely familiar              |
