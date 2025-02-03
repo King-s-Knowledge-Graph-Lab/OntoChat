@@ -1,10 +1,64 @@
 # Study Script for User Story Writing
 
-| **Step**                                               | **Script**                                                                                                                                                                                                                                                       |
-|--------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Materials/activities pre-Interview**                 | Ask participants to prepare by reflecting on their current processes for writing user stories or defining user requirements in any software or ontology project. Request any relevant documentation or examples they might need during the interview.                |
-| **<5 minutes> Opening**                                | - Introductions and pleasantries. <br> - Provide and explain the consent form. <br> - Fill out the demographics form.                                                                                                                                              |
-| **<10 minutes> Discussion of current practices in user story/requirement writing** | - Can you briefly describe your persona in this user story or requirement you wrote? <br> - Can you describe, with examples, what kinds of user story or requirement writing you do as part of your role? <br> - Can you describe, with examples, what tools you use for writing user stories or requirements? <br> - Can you describe, with examples, how you write a user story from scratch? <br> - Can you describe a user story or requirement writing problem, potentially fictional, you may encounter in the future? <br> - If this produces a satisfactory scenario, proceed to turn taking. If not, ask: Can you share an example of a problem that required you to develop a new workflow for writing user stories or requirements? |
-| **<30 minutes> Participatory prompting, turn taking: per turn** | - Is this useful? Why or why not? <br> - Are you confused, surprised, or indirectly inspired? <br> - To progress, choose one or more of: <br> - What would you like to know next? What else would you need to know to follow these suggestions? <br> - What would you change in your query to make this more useful? Would you ask this a different way? <br> - (Experimenter driven, at most once in a row) Let's see what happens if we try (X). Alternatively: I propose to continue by X, what would you have done (e.g., continued by Y, different task, abandon tool)? <br> - (If issue with result) I see that there is an issue here with (X), if we do this (new prompt) we can get that data back for you (if participant wants this, continue, else first question). <br> - (If participant is stuck, only thinking in terms of "classical" search engines) Imagine you're talking to a colleague and bouncing ideas off them. |
-| **<15 minutes> Post activity interview**               | - How would a tool like this fit or not fit into your workflow? If the participant says something like "If it could do X that would be helpful," try it out, get feedback from the participant, but keep time in mind. <br> - What benefits does this LLM-assisted user story/requirement writing workflow provide over your existing workflow? <br> - When you were surprised/inspired by X (from turn taking), what features/capabilities would be useful in exploring this inspiration further? <br> - What features do you believe would increase the frequency and effectiveness of these inspiring results/moments (e.g., suggested prompts)? <br> - How would your user story/requirement writing workflow change with a tool like this? <br> - What barriers or frustrations did you have with this experience that prevented you from exploring the question to your satisfaction? <br> - What are the advantages or disadvantages of using a chat-based interface for writing user stories or requirements? |
+## **1. Pre-Interview Preparation**
 
+### **1.1 Materials and Activities Before the Interview**
+- Participants should reflect on their current processes for writing user stories or defining user requirements within software or ontology projects.
+- Participants should gather any relevant documentation, templates, or examples they may need during the interview.
+- Ensure participants have access to any tools or resources they typically use for user story writing.
+
+## **2. Opening (Duration: <5 minutes>)**
+
+### **2.1 Introduction and Consent Process**
+- Begin with introductions and casual conversation to establish a comfortable environment.
+- Provide participants with an overview of the study, including its purpose and structure.
+- Explain the consent form, ensure the participant understands their rights, and obtain their signed consent.
+- Ask participants to fill out a demographics form to collect relevant background information.
+
+## **3. Discussion on Current Practices in User Story and Requirement Writing (Duration: <10 minutes>)**
+
+### **3.1 Understanding Participants' Approaches**
+- Request participants to briefly describe their role in writing user stories or defining requirements.
+- Ask participants to describe a user story or requirement they have written, highlighting its intended purpose and audience.
+- Discuss the tools and techniques participants use in their user story or requirement writing process.
+- Explore how participants typically approach writing a user story from scratch, including key considerations and challenges.
+- Encourage participants to share a hypothetical or real challenge they have encountered in user story writing and how they approached resolving it.
+- If necessary, prompt participants to provide an example of a situation that required them to adapt or develop a new workflow for writing user stories or requirements.
+
+## **4. Participatory Prompting and Turn-Taking (Duration: <30 minutes>)**
+
+### **4.1 Interactive Engagement with LLM-Assisted Writing**
+- Present a user story writing prompt or tool-generated suggestion and ask:
+  - *Did you find this useful? Why or why not?*
+  - *Did anything in the response confuse, surprise, or inspire you?*
+- Guide participants through iterative refinement of their user story or requirement:
+  - *What would you like to know next? What additional information would make this more useful?*
+  - *Would you rephrase your query to improve the result? How would you modify it?*
+- Experimenter-driven engagement (at most once in a row):
+  - *Let's test an alternative approach by modifying the prompt in this way (X). What do you think?*
+  - *I propose continuing with (X). Would you have preferred a different approach?*
+- If a result is unsatisfactory:
+  - *I notice an issue with (X). If we modify the prompt, we might retrieve the data you need. Would you like to proceed?*
+- If a participant is stuck, encourage them to think beyond traditional search-based methods:
+  - *Imagine you are discussing this problem with a colleague. How would you refine your request to get clearer insights?*
+
+## **5. Post-Activity Interview (Duration: <15 minutes>)**
+
+### **5.1 Evaluating the Experience and Potential Integration**
+- *How would a tool like this integrate into your existing workflow?*
+- If a participant suggests a useful capability (*e.g., If it could do X, it would be helpful*), attempt to demonstrate it and gather feedback while managing time constraints.
+- *What benefits does this LLM-assisted workflow provide compared to your current method of writing user stories or requirements?*
+- *When you found a generated response surprising or inspiring, what additional features or capabilities would help you explore that inspiration further?*
+- *What features do you think would improve the effectiveness and frequency of these inspiring moments (e.g., suggested prompts, structured refinements)?*
+- *How do you think your overall approach to writing user stories or requirements would change with a tool like this?*
+- *What barriers or frustrations did you experience that prevented you from fully exploring your query?*
+- *What are the advantages and disadvantages of using a conversational, chat-based interface for user story or requirement writing?*
+
+## **6. Concluding Remarks**
+
+### **6.1 Wrapping Up the Session**
+- Thank the participant for their time and valuable insights.
+- Reiterate the purpose of the study and how their feedback contributes to improvements.
+- Address any final questions or comments from the participant.
+- Inform the participant about any follow-up communication, if applicable.
+- End the session on a positive and appreciative note.
