@@ -1,49 +1,71 @@
-# Background Information You Need to Know
+# Background Information for Ontology User Story Elicitation
 
-## What is a Domain Ontology?
-A domain ontology is like a map of knowledge and how they connect in a specific subject, such as food, music, or health. It explains the important words, their meanings, and how they relate to each other, helping everyone understand and share information clearly.
+## **1. Understanding Domain Ontologies**
+A **domain ontology** is a structured representation of knowledge within a specific subject area, such as music, healthcare, or cultural heritage. It defines key concepts, their meanings, and how they relate to each other. This structured approach enables clear communication, knowledge sharing, and interoperability between different systems.
 
-## What is Ontology Construction?
-Ontology construction is the process of creating a structured map of knowledge about a specific topic or domain, like music, healthcare, or food. It involves defining important terms, their meanings, and how they relate to each other, making it easier for people and computers to understand and share information. Think of it as building a detailed guide that organizes complex ideas into a clear and connected framework.
+## **2. What is Ontology Construction?**
+Ontology construction is the process of creating an organized, machine-readable framework that structures domain-specific knowledge. This involves:
+- Defining core concepts and their relationships.
+- Establishing a common vocabulary.
+- Ensuring logical consistency to facilitate automated reasoning.
 
-## What is an AI Chatbot?
-An AI chatbot for collecting user responses during interviews is a tool designed to ask questions, gather answers, and guide the conversation in a natural way. It uses GenAI to understand your responses and can adjust its questions based on what you say. This makes it an efficient and user-friendly way to collect information while ensuring the interaction feels smooth, just like talking to a person.
+Ontology construction serves as the backbone for knowledge-based applications, enabling seamless integration and enhanced searchability of domain information.
 
----
+## **3. AI Chatbots in Ontology User Story Collection**
+An **AI chatbot** is a conversational tool designed to facilitate interviews by asking structured questions, collecting responses, and guiding the discussion dynamically. Leveraging **Generative AI (GenAI)**, it interprets user input, refines queries, and adapts based on responses, creating an intuitive and interactive user experience.
 
-## How Can I Understand What is an Ontology User Story?
-In real-world ontology construction projects, interviewing hundreds of domain experts is often necessary to gather their knowledge for building an ontology.
+## **4. Understanding Ontology User Stories**
+In large-scale ontology development projects, gathering knowledge from domain experts is essential. Traditionally, this requires extensive interviews with multiple experts. 
 
-- **Ontology user stories** provide a user-friendly approach by asking experts to write stories about their goals and scenarios.
-- A **user story** effectively conveys the expert's goals for using the ontology and the scenarios in which it will be applied. It serves as a reflection of their needs.
-- By leveraging user stories, researchers can design ontologies that precisely align with the experts' requirements, avoiding scope creep.
+### **Why Use Ontology User Stories?**
+- **User-friendly approach**: Experts articulate their needs through narratives rather than rigid data models.
+- **Goal-driven design**: User stories clarify the intended use cases of an ontology, ensuring it aligns with real-world needs.
+- **Scope control**: Helps researchers maintain focus, avoiding unnecessary complexity in ontology design.
 
----
+## **5. Example Ontology User Story: Linka, a Computer Scientist**
 
-## A Good Example of an Ontology User Story
+### **5.1 Persona**
+- **Name**: Linka  
+- **Age**: 34  
+- **Occupation**: Researcher in Computer Science  
+- **Skills**: Expert in Network Data Analysis and Semantic Web technologies, specializing in music knowledge graphs  
+- **Interests**: Exploring multi-modal music data, uncovering hidden relationships between artists, composers, and musical pieces  
 
-### Persona
-- **Name**: Linka
-- **Age**: 34
-- **Occupation**: Computer Science Researcher
-- **Skills**: Expert in Network Data Analysis and Semantic Web technologies, specializing in the music domain.
-- **Interests**: Exploring music knowledge graphs to uncover hidden connections between artists, composers, and pieces.
+### **5.2 Goal**
+**Description**: Linka aims to efficiently retrieve, integrate, and analyze music-related data from diverse sources to enable large-scale knowledge discovery experiments. Her objectives include:
+- Linking, structuring, and enriching multi-modal music datasets.
+- Automating discovery of relationships between musical entities.
+- Aligning data with knowledge graphs such as MusicBrainz, Wikidata, and Polifonia.
 
-### Goal
-- **Goal Description**: Linka seeks to integrate and analyze diverse music-related data for large-scale knowledge discovery.
-- **Keywords**: music data, multi-modal data, knowledge discovery.
+**Keywords**: music data, knowledge graphs, multi-modal data, automated discovery, large-scale integration  
 
-### Scenario
-- **Before**: Linka manually matches music data from multiple sources, a time-consuming process.
-- **During**: Using Polifonia, she automates data retrieval by inputting artists, composers, and musical works.
-- **After**: The system provides semantically enriched data, enabling large-scale knowledge experiments.
+### **5.3 Scenario**
+#### **Before Using the Ontology**
+Linka manually searches multiple datasets, services, and repositories to collect and integrate music-related data. This process is:
+- **Time-consuming**: Extensive manual curation is required.
+- **Unscalable**: The increasing volume of data makes manual integration impractical.
+- **Error-prone**: Data inconsistencies, such as variations in artist names (*e.g., "Beethoven" vs. "Ludwig van Beethoven"*), create semantic ambiguities.
 
----
+#### **During Ontology Use**
+By leveraging the **Polifonia ontology**, Linka automates data retrieval, integration, and enrichment. She enters search parameters (artist, composer, album), and the system:
+- Retrieves structured data from multiple sources.
+- Standardizes entity representation to resolve inconsistencies.
+- Links data for comprehensive analysis.
 
-## What is OntoChat?
-OntoChat is a conversational agent designed to guide you by asking elicitation questions to generate an ontology user story tailored to your ontological needs and answering your questions along the way.
+#### **After Using the Ontology**
+With **automated reasoning and semantic enrichment**, Linka achieves:
+- **Advanced computational analysis**: Uncovering hidden influences between classical and contemporary composers.
+- **Improved classification**: Refining genre identification and recommendation models.
+- **Enhanced interoperability**: Transforming fragmented data into a unified knowledge base.
 
----
+## **6. What is OntoChat?**
+**OntoChat** is an AI-powered conversational assistant designed to guide users through the process of ontology user story elicitation. It interacts dynamically by:
+- Asking structured elicitation questions.
+- Refining user responses iteratively.
+- Ensuring generated user stories align with ontology development goals.
 
-## Purpose of This Study
-This study aims to evaluate the effectiveness of the support provided by OntoChat at various stages of ontology user story generation.
+## **7. Purpose of This Study**
+The objective of this study is to evaluate how effectively **OntoChat** supports users at different stages of ontology user story creation. Key areas of investigation include:
+- The usability and intuitiveness of OntoChat’s elicitation process.
+- The accuracy and completeness of generated ontology user stories.
+- The potential for improving ontology alignment with real-world needs.
