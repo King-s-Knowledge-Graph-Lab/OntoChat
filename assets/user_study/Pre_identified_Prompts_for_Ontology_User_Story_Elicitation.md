@@ -1,6 +1,6 @@
 # Pre-identified Prompts for Ontology User Story Elicitation
 
-## **1. Defining Roles**
+## **1. Defining Persona**
 1. Imagine a persona that represents a typical user of this **[ontology]**. Describe their key traits, including their proficiency, interests, expertise, and level of familiarity with ontology-related tasks.
 2. Identify the challenges this persona may face when interacting with the **[ontology]**. Consider their background, expectations, and technical limitations.
 3. What are the key motivations of this persona when using the **[ontology]**? How do these motivations influence their interactions and expectations?
