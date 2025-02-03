@@ -33,5 +33,3 @@ A scenario provides a narrative explaining how the persona interacts with the on
 - **Impact and Outcomes:** Explain the results after the persona integrates the ontology into their process. How does it enhance efficiency, accuracy, or usability?
 
 A strong scenario makes it easier to visualize how the ontology will function in practice and highlights the value it provides.
-
-By following this structured approach, you can create ontology user stories that are well-grounded in user needs, ensuring that your ontology is both practical and impactful.
