@@ -34,24 +34,4 @@ A scenario provides a narrative explaining how the persona interacts with the on
 
 A strong scenario makes it easier to visualize how the ontology will function in practice and highlights the value it provides.
 
-## **4. Identify Example Data**
-Providing concrete examples of the data your ontology will manage is crucial for understanding its scope and utility. Consider the following aspects when specifying example data:
-
-- **Data Type:** Identify whether the data is textual, numerical, visual, or multimodal.
-- **Specific Examples:** Provide relevant examples based on the persona’s domain. For instance:
-  - If the persona is a librarian, example data may include book titles, authors, and publication years.
-  - If the persona is a biomedical researcher, example data may include gene names, protein structures, and clinical trial results.
-- **Usage and Relevance:** Explain how the ontology processes and utilizes the data to support the persona’s goals.
-
-Clearly defining example data ensures that the ontology captures the right level of granularity and relevance for its intended users.
-
-## **5. List Relevant Resources (Optional)**
-Including relevant resources can help the persona navigate their work effectively. Consider providing:
-
-- **Websites and Databases:** Any online platforms that provide useful datasets or reference materials.
-- **Books and Publications:** Recommended readings that offer foundational or advanced knowledge related to the ontology’s domain.
-- **Tools and Software:** Applications that complement the ontology’s functionalities.
-
-These resources should be accessible and relevant to the persona’s interests, enhancing their ability to effectively use the ontology.
-
 By following this structured approach, you can create ontology user stories that are well-grounded in user needs, ensuring that your ontology is both practical and impactful.
