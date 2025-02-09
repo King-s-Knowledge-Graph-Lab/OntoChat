@@ -4,10 +4,7 @@
 
 # OntoChat: A Framework for Conversational Ontology Engineering
 
-**OntoChat** is a framework designed to support **ontology requirements engineering** through conversational interactions. It facilitates **requirement elicitation**, **analysis**, and **testing**, enabling users to interact with a conversational agent to guide the creation of **use cases** and the extraction of **competency questions**. The framework provides computational tools for analyzing requirements and testing preliminary versions of ontologies, enhancing the overall efficiency and accuracy of ontology development.  
-
-OntoChat has been evaluated through a replication of the engineering efforts behind the [Music Meta Ontology](https://github.com/polifonia-project/music-meta-ontology). Its **ontology user story generation functions** are publicly hosted on Hugging Face Spaces:  
-[OntoChat on Hugging Face Spaces](https://huggingface.co/spaces/1hangzhao/OntoChat).
+**OntoChat** is a framework designed to support **ontology requirements engineering** through conversational interactions. It facilitates **requirement elicitation**, **analysis**, and **testing**, enabling users to interact with a conversational agent to guide the creation of **use cases** and the extraction of **competency questions**. The framework provides computational tools for analyzing requirements and testing preliminary versions of ontologies, enhancing the overall efficiency and accuracy of ontology development. OntoChat has been evaluated through a replication of the engineering efforts behind the [Music Meta Ontology](https://github.com/polifonia-project/music-meta-ontology). Its **ontology user story generation functions** are publicly hosted on [Hugging Face Spaces](https://huggingface.co/spaces/1hangzhao/OntoChat).
 
 ---
 
