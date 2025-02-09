@@ -27,11 +27,14 @@ OntoChat has been hosted in HF Spaces at: [[https://huggingface.co/spaces/1hangz
 
 ## Authors and attribution
 ```
-@article{zhang2024ontochat,
-  title={OntoChat: a Framework for Conversational Ontology Engineering using Language Models},
-  author={Zhang, Bohui and Carriero, Valentina Anita and Schreiberhuber, Katrin and Tsaneva, Stefani and Gonz{\'a}lez, Luc{\'\i}a S{\'a}nchez and Kim, Jongmo and de Berardinis, Jacopo},
-  journal={arXiv preprint arXiv:2403.05921},
-  year={2024}
+@inproceedings{zhang2024ontochat,
+  title={OntoChat: A Framework for Conversational Ontology Engineering Using Language Models},
+  author={Zhang, Bohui and Carriero, Valentina Anita and Schreiberhuber, Katrin and Tsaneva, Stefani and Gonz{\'a}lez, Luc{\'i}a S{\'a}nchez and Kim, Jongmo and de Berardinis, Jacopo},
+  booktitle={The Semantic Web: ESWC 2024 Satellite Events},
+  volume={15344},
+  pages={102--121},
+  year={2024},
+  publisher={Springer Nature Switzerland},
 }
 
 @inproceedings{zhao2024improving,
