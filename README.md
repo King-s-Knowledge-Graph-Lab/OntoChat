@@ -49,13 +49,7 @@
 
 ## Acknowledgement
 
-We acknowledge the following support:
-
-- This project is co-funded by [Polifonia](https://polifonia-project.eu) under grant agreement No. 101004746 as part of the European Union’s Horizon 2014-2020 research and innovation programme.
-- This project is co-funded by [MuseIT](https://www.muse-it.eu/) under grant agreement No. 101061441 as part of the European Union’s Horizon 2021-2027 research and innovation programme.
-- This project is co-funded by [SIEMENS AG](https://www.siemens.com/global/en.html) and the [Technical University of Munich](https://www.tum.de/), Institute for Advanced Study, Germany.
-
-We also thank all the evaluators that contributed feedback on the effectiveness of the tool and provided their experience of use.
+This project has received multiple fundings, including co-funding by [Polifonia](https://polifonia-project.eu) under grant agreement No. 101004746 as part of the European Union’s Horizon 2014-2020 research and innovation programme, and [MuseIT](https://www.muse-it.eu/) under grant agreement No. 101061441 as part of the European Union’s Horizon 2021-2027 research and innovation programme. Additional support has been provided by [SIEMENS AG](https://www.siemens.com/global/en.html) and the [Technical University of Munich](https://www.tum.de/), Institute for Advanced Study, Germany. We also extend our gratitude to all the evaluators who contributed valuable feedback on the tool's effectiveness and shared their user experiences.
 
 ## License
 
