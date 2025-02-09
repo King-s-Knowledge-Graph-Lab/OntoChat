@@ -2,7 +2,7 @@
     <img src="assets/title_logo.png" width="96%" height="auto" />
 </div>
 
-# OntoChat: A Framework for Conversational Ontology Requirements Engineering
+# OntoChat: A Framework for Conversational Ontology Engineering
 
 **OntoChat** is a framework designed to support **ontology requirements engineering** through conversational interactions. It facilitates **requirement elicitation**, **analysis**, and **testing**, enabling users to interact with a conversational agent to guide the creation of **use cases** and the extraction of **competency questions**. The framework provides computational tools for analyzing requirements and testing preliminary versions of ontologies, enhancing the overall efficiency and accuracy of ontology development.  
 
@@ -13,13 +13,21 @@ OntoChat has been evaluated through a replication of the engineering efforts beh
 
 ## Deployment Instructions
 
-If you would like to deploy OntoChat locally, follow these steps:
+1. **Set Up Your Environment**  
+   - Ensure you have **Python 3.11** or higher installed.  
+   - Create a Python environment of your choice (e.g., virtualenv, conda).  
 
-### 1. Set up the environment
-- Create a virtual Python environment:
-  ```bash
-  python -m venv venv
-  source venv/bin/activate  # On Windows: venv\Scripts\activate
+2. **Install Dependencies**  
+   - Download the required dependencies:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+3. **Run the Application**  
+   - Start the OntoChat framework using Gradio:
+     ```bash
+     Gradio app.py
+     ```
 
 ## Authors and attribution
 ```
