@@ -2,28 +2,24 @@
     <img src="assets/title_logo.png" width="96%" height="auto" />
 </div>
 
-# OntoChat
+# OntoChat: A Framework for Conversational Ontology Requirements Engineering
 
-We introduce **OntoChat**, a framework for conversational ontology engineering that supports requirement elicitation, 
-analysis, and testing. By interacting with a conversational agent, users can steer the creation of use cases and the 
-extraction of competency questions, while receiving computational support to analyse the overall requirements and test 
-early versions of the resulting ontologies.
+**OntoChat** is a framework designed to support **ontology requirements engineering** through conversational interactions. It facilitates **requirement elicitation**, **analysis**, and **testing**, enabling users to interact with a conversational agent to guide the creation of **use cases** and the extraction of **competency questions**. The framework provides computational tools for analyzing requirements and testing preliminary versions of ontologies, enhancing the overall efficiency and accuracy of ontology development.  
 
-## Deploy
-If you would like to deploy this demo locally,
-1. Create a python environment and install the requirements using `pip install -r requirements.txt`.
-2. Run `app.py`.
+OntoChat has been evaluated through a replication of the engineering efforts behind the [Music Meta Ontology](https://github.com/polifonia-project/music-meta-ontology). Its **ontology user story generation functions** are publicly hosted on Hugging Face Spaces:  
+[OntoChat on Hugging Face Spaces](https://huggingface.co/spaces/1hangzhao/OntoChat).
 
-## Hosting in Hugging Face Spaces
-OntoChat has been hosted in HF Spaces at: [[https://huggingface.co/spaces/1hangzhao/OntoChat](https://huggingface.co/spaces/1hangzhao/OntoChat)]
+---
 
-## Note
-- A first evaluation of the framework was performed to reproduce the engineering efforts behind the [Music Meta Ontology](https://github.com/polifonia-project/music-meta-ontology).
+## Deployment Instructions
 
-## TODO
-- Improve the verbaliser (classes, named entities, and relations might be messy in some cases)
-- Optimize clustering visualization (maybe only keep LLM lcustering)
-- Add [flagging](https://www.gradio.app/docs/flagging), e.g., [`HuggingFaceDatasetSaver`](https://www.gradio.app/docs/flagging#hugging-face-dataset-saver-header)
+If you would like to deploy OntoChat locally, follow these steps:
+
+### 1. Set up the environment
+- Create a virtual Python environment:
+  ```bash
+  python -m venv venv
+  source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 ## Authors and attribution
 ```
