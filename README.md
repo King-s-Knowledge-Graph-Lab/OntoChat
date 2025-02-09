@@ -33,8 +33,7 @@ OntoChat has been hosted in HF Spaces at: [[https://huggingface.co/spaces/1hangz
   booktitle={Extended Semantic Web Conference, ESWC2024. Hersonissos, Greece},
   volume={15344},
   pages={102--121},
-  year={2024},
-  publisher={Springer Nature Switzerland},
+  year={2024}
 }
 
 @inproceedings{zhao2024improving,
