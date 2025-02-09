@@ -1,210 +1,208 @@
 import gradio as gr
+# from ontochat.functions import set_openai_api_key, user_story_generator, cq_generator, load_example_user_story, clustering_generator, ontology_testing, load_example
+from ontochat.functions import set_openai_api_key, user_story_generator, load_example
 
-from ontochat.functions import *
+user_story_template = """**Persona:**\n\n- Name: -\n- Age: -\n- Occupation: -\n- Skills: -\n- Interests: -\n\n**Goal:**\n\n- Description: -\n- Keywords: -\n\n**Scenario:**\n\n- Before: -\n- During: -\n- After: -\n\n**Example Data:**\n\n- Category: -\n- Data: -\n\n**Resources:**\n\n- Resource Name: -\n- Link: -"""
 
+with gr.Blocks() as set_api_key:
+    gr.Markdown(
+        """
+        # Welcome to OntoChat! 👋
+
+        ### Introduction
+
+        Hi there! I'm OntoChat, your conversational assistant 🤖 here to support you generate ontology user stories 🎉. I simplify the process by combining human input with GenAI capabilities ✨. Whether you're experienced with prompt engineering or not, I'm here to guide you step by step by (1) asking questions ❓ for elicitation, (2) offering example answers 💡 for guidance, (3) providing predefined templates 📋 to help craft effective prompts, and (4) refining 🛠️ your input into a formal user story. Let's make ontology requirements collection easier and more efficient together 🚀! For more details, visit 🌐 [OntoChat on GitHub](https://github.com/King-s-Knowledge-Graph-Lab/OntoChat). 
+        
+        ### Citations
+        
+        [1] Zhang B, Carriero VA, Schreiberhuber K, Tsaneva S, González LS, Kim J, de Berardinis J. OntoChat: a Framework for Conversational Ontology Engineering using Language Models. arXiv preprint arXiv:2403.05921. 2024 Mar 9.
+        
+        [2] Zhao Y, Zhang B, Hu X, Ouyang S, Kim J, Jain N, de Berardinis J, Meroño-Peñuela A, Simperl E. Improving Ontology Requirements Engineering with OntoChat and Participatory Prompting. InProceedings of the AAAI Symposium Series 2024 Nov 8 (Vol. 4, No. 1, pp. 253-257).
+        """
+    )
+
+    with gr.Group():
+        api_key = gr.Textbox(
+            label="OpenAI API Key",
+            info="Please input your OpenAI API Key if you don't have it set up on your own machine. Please note that "
+                 "the key will only be used for this demo and will not be uploaded or used anywhere else."
+        )
+        api_key_btn = gr.Button(value="Set API Key")
+        api_key_btn.click(fn=set_openai_api_key, inputs=api_key, outputs=api_key)
 
 with gr.Blocks() as user_story_interface:
-    gr.Markdown(
-        """
-        # OntoChat 
-        Hello! I am OntoChat, your conversational ontology engineering assistant, to help you generate 
-        user stories, elicit requirements, and extract and analyze competency questions. In ontology engineering, 
-        a user story contains all the requirements from the perspective of an end user of the ontology. It is a way 
-        of capturing what a user needs to achieve with the ontology while also providing context and value. This demo 
-        will guide you step-by-step to create a user story and generate competency questions from it. Once you are 
-        ready, start inputting your persona, objective (goal), and sample data and chat with the chatbot. Once you 
-        find the generated user story satisfactory, please copy the generated user story and go to the next step (
-        tab)."""
-    )
-
-    with gr.Group():
-        api_key = gr.Textbox(
-            label="OpenAI API Key",
-            info="Please input your OpenAI API Key if you don't have it set up on your own machine. Please note that "
-                 "the key will only be used for this demo and will not be uploaded or used anywhere else."
-        )
-        api_key_btn = gr.Button(value="Set API Key")
-        api_key_btn.click(fn=set_openai_api_key, inputs=api_key, outputs=api_key)
-
     with gr.Row():
-        with gr.Column():
-            user_story_chatbot = gr.Chatbot([
-                [None, "Hello! I am OntoChat, your conversational ontology engineering assistant. I will guide you step"
-                       " by step in the creation of a user story. Let's start with the persona. What are the name, "
-                       "occupations, skills, interests of the user?"],
-            ])
-            user_story_input = gr.Textbox(
-                label="Chatbot input",
-                placeholder="Please type your message here and press Enter to interact with the chatbot :)"
+        with gr.Column(scale=1):
+            user_story_chatbot = gr.Chatbot(
+                value=[
+                    {"role": "assistant", "content": ( 
+                        "Hello! I'm OntoChat 😊. I'll help you create an ontology user story! \n\n**1.** Don't worry about prompting—**find the template 📄 and edit the placeholders 📝** to craft a high-quality response 👍. \n\n**2.** Placeholders **\*\*[]\*\*** are **mandatory**; placeholders **\*[]\*** are **optional**. \n\n**3.** Feel free to ask OntoChat any questions if needed. \n\nLet's get started! **Which domain is this ontology for?** For example, 'Healthcare, Wine, Music, etc.'. Use template **[Create Domain]** to answer."
+                    )}
+                ],
+                height="472px",
+                type="messages"
             )
-            # gr.Markdown(
-            #     """
-            #     ### User story generation prompt
-            #     Click the button below to use a user story generation prompt that provides better instructions to the chatbot.
-            #     """
-            # )
-            # prompt_btn = gr.Button(value="User story generation prompt")
-            # prompt_btn.click(
-            #     fn=load_user_story_prompt,
-            #     inputs=[],
-            #     outputs=[user_story_input]
-            # )
-        user_story = gr.TextArea(
-            label="User story",
-            interactive=True
-        )
+            user_story_input = gr.Textbox(
+                label="Message OntoChat",
+                placeholder="Please type your message here and press Enter to interact with the chatbot:",
+                max_lines = 20,
+                lines = 1
+            )
+            elicitation_questions_dataset = gr.Dataset(
+                components=[user_story_input],
+                label="Prompt Templates",
+                type="index",
+                samples=[
+                    ["Create Domain"],
+                    ["Create Persona"],
+                    ["Create User Goal"],
+                    ["Create Actions"],
+                    ["Create Keywords"],
+                    ["Create Current Methods"],
+                    ["Create Challenges"],
+                    ["Create New Methods"],
+                    ["Create Outcomes"]
+                ],
+                samples_per_page = 10
+            )
+
     user_story_input.submit(
         fn=user_story_generator,
-        inputs=[
-            user_story_input, user_story_chatbot
-        ],
-        outputs=[
-            user_story, user_story_chatbot, user_story_input
-        ]
+        inputs=[user_story_input, user_story_chatbot],
+        outputs=[user_story_chatbot, user_story_input]
     )
+    elicitation_questions_dataset.click(
+        fn=load_example, 
+        inputs=[elicitation_questions_dataset], 
+        outputs=[user_story_input]
+    ) 
 
+# with gr.Blocks() as cq_interface:
+#     with gr.Row():
+#         with gr.Column():
+#             cq_chatbot = gr.Chatbot(
+#                 value=[
+#                     {
+#                         "role": "assistant",
+#                         "content": (
+#                             "I am OntoChat, your conversational ontology engineering assistant. Here is the second step of "
+#                             "the system. Please give me your user story and tell me how many competency questions you want "
+#                             "me to generate from the user story."
+#                         )
+#                     }
+#                 ],
+#                 type="messages" 
+#             )
+#             cq_input = gr.Textbox(
+#                 label="Chatbot input",
+#                 placeholder="Please type your message here and press Enter to interact with the chatbot:"
+#             )
+#             gr.Markdown(
+#                 """
+#                 ### User story examples
+#                 Click the button below to use an example user story from 
+#                 [Linka](https://github.com/polifonia-project/stories/tree/main/Linka_Computer_Scientist) in Polifonia.
+#                 """
+#             )
+#             example_btn = gr.Button(value="Use example user story")
+#             example_btn.click(
+#                 fn=load_example_user_story,
+#                 inputs=[],
+#                 outputs=[cq_input]
+#             )
+#         cq_output = gr.TextArea(
+#             label="Competency questions",
+#             interactive=True
+#         )
+#     cq_input.submit(
+#         fn=cq_generator,
+#         inputs=[
+#             cq_input, cq_chatbot
+#         ],
+#         outputs=[
+#             cq_output, cq_chatbot, cq_input
+#         ]
+#     )
 
-with gr.Blocks() as cq_interface:
-    gr.Markdown(
-        """
-        # OntoChat 
-        This is the second step of OntoChat. This functionality provides support for the extraction of competency 
-        questions from a user story. Please, provide a user story to start extracting competency questions with the 
-        chatbot, or simply load the example story below.
-        """
-    )
+# clustering_interface = gr.Interface(
+#     fn=clustering_generator,
+#     inputs=[
+#         gr.TextArea(
+#             label="Competency questions",
+#             info="Please copy the previously generated competency questions and paste it here. You can also modify "
+#                  "the questions before submitting them."
+#         ),
+#         gr.Dropdown(
+#             value="LLM clustering",
+#             choices=["LLM clustering", "Agglomerative clustering"],
+#             label="Clustering method",
+#             info="Please select the clustering method."
+#         ),
+#         gr.Textbox(
+#             label="Number of clusters (optional for LLM clustering)",
+#             info="Please input the number of clusters you want to generate. And please do not input a number that "
+#                  "exceeds the total number of competency questions."
+#         )
+#     ],
+#     outputs=[
+#         gr.Image(label="Visualization"),
+#         gr.Code(
+#             language='json',
+#             label="Competency Question clusters"
+#         )
+#     ],
+#     title="OntoChat",
+#     description="This is the third step of OntoChat. Please copy the generated competency questions from the previous "
+#                 "step and run the clustering algorithm to group the competency questions based on their topics. From "
+#                 "our experience, LLM clustering has the best performance.",
+#     flagging_mode="never"
+# )
 
-    with gr.Group():
-        api_key = gr.Textbox(
-            label="OpenAI API Key",
-            placeholder="If you have set the key in other tabs, you don't have to set it again.",
-            info="Please input your OpenAI API Key if you don't have it set up on your own machine. Please note that "
-                 "the key will only be used for this demo and will not be uploaded or used anywhere else."
-        )
-        api_key_btn = gr.Button(value="Set API Key")
-        api_key_btn.click(fn=set_openai_api_key, inputs=api_key, outputs=api_key)
+# with gr.Blocks() as testing_interface:
+#     gr.Markdown(
+#         """
+#         # OntoChat
+#         This is the final part of OntoChat which performs ontology testing based on the input ontology file and CQs. 
+#         """
+#     )
 
-    with gr.Row():
-        with gr.Column():
-            cq_chatbot = gr.Chatbot([
-                [None, "I am OntoChat, your conversational ontology engineering assistant. Here is the second step of "
-                       "the system. Please give me your user story and tell me how many competency questions you want "
-                       "me to generate from the user story."]
-            ])
-            cq_input = gr.Textbox(
-                label="Chatbot input",
-                placeholder="Please type your message here and press Enter to interact with the chatbot :)"
-            )
-            gr.Markdown(
-                """
-                ### User story examples
-                Click the button below to use an example user story from 
-                [Linka](https://github.com/polifonia-project/stories/tree/main/Linka_Computer_Scientist) in Polifonia.
-                """
-            )
-            # TODO: could add more examples using Dropdown or CheckboxGroup
-            example_btn = gr.Button(value="Use example user story")
-            example_btn.click(
-                fn=load_example_user_story,
-                inputs=[],
-                outputs=[cq_input]
-            )
-        cq_output = gr.TextArea(
-            label="Competency questions",
-            interactive=True
-        )
-    cq_input.submit(
-        fn=cq_generator,
-        inputs=[
-            cq_input, cq_chatbot
-        ],
-        outputs=[
-            cq_output, cq_chatbot, cq_input
-        ]
-    )
+#     with gr.Group():
+#         api_key = gr.Textbox(
+#             label="OpenAI API Key",
+#             placeholder="If you have set the key in other tabs, you don't have to set it again.",
+#             info="Please input your OpenAI API Key if you don't have it set up on your own machine. Please note that "
+#                  "the key will only be used for this demo and will not be uploaded or used anywhere else."
+#         )
+#         api_key_btn = gr.Button(value="Set API Key")
+#         api_key_btn.click(fn=set_openai_api_key, inputs=api_key, outputs=api_key)
 
-
-clustering_interface = gr.Interface(
-    fn=clustering_generator,
-    inputs=[
-        gr.TextArea(
-            label="Competency questions",
-            info="Please copy the previously generated competency questions and paste it here. You can also modify "
-                 "the questions before submitting them."
-        ),
-        gr.Dropdown(
-            value="LLM clustering",
-            choices=["LLM clustering", "Agglomerative clustering"],
-            label="Clustering method",
-            info="Please select the clustering method."
-        ),
-        gr.Textbox(
-            label="Number of clusters (optional for LLM clustering)",
-            info="Please input the number of clusters you want to generate. And please do not input a number that "
-                 "exceeds the total number of competency questions."
-        )
-    ],
-    outputs=[
-        gr.Image(label="Visualization"),
-        gr.Code(
-            language='json',
-            label="Competency Question clusters"
-        )
-    ],
-    title="OntoChat",
-    description="This is the third step of OntoChat. Please copy the generated competency questions from the previous "
-                "step and run the clustering algorithm to group the competency questions based on their topics. From "
-                "our experience, LLM clustering has the best performance.",
-    allow_flagging="never"
-)
-
-
-with gr.Blocks() as testing_interface:
-    gr.Markdown(
-        """
-        # OntoChat 
-        This is the final part of OntoChat which performs ontology testing based on the input ontology file and CQs. 
-        """
-    )
-
-    with gr.Group():
-        api_key = gr.Textbox(
-            label="OpenAI API Key",
-            placeholder="If you have set the key in other tabs, you don't have to set it again.",
-            info="Please input your OpenAI API Key if you don't have it set up on your own machine. Please note that "
-                 "the key will only be used for this demo and will not be uploaded or used anywhere else."
-        )
-        api_key_btn = gr.Button(value="Set API Key")
-        api_key_btn.click(fn=set_openai_api_key, inputs=api_key, outputs=api_key)
-
-    ontology_file = gr.File(label="Ontology file")
-    ontology_desc = gr.Textbox(
-        label="Ontology description",
-        placeholder="Please provide a description of the ontology uploaded to provide basic information and "
-                    "additional context."
-    )
-    cq_testing_input = gr.Textbox(
-        label="Competency questions",
-        placeholder="Please provide the competency questions that you want to test with."
-    )
-    testing_btn = gr.Button(value="Test")
-    testing_output = gr.TextArea(label="Ontology testing output")
-    testing_btn.click(
-        fn=ontology_testing,
-        inputs=[
-            ontology_file, ontology_desc, cq_testing_input
-        ],
-        outputs=[
-            testing_output
-        ]
-    )
-
+#     ontology_file = gr.File(label="Ontology file")
+#     ontology_desc = gr.Textbox(
+#         label="Ontology description",
+#         placeholder="Please provide a description of the ontology uploaded to provide basic information and "
+#                     "additional context."
+#     )
+#     cq_testing_input = gr.Textbox(
+#         label="Competency questions",
+#         placeholder="Please provide the competency questions that you want to test with."
+#     )
+#     testing_btn = gr.Button(value="Test")
+#     testing_output = gr.TextArea(label="Ontology testing output")
+#     testing_btn.click(
+#         fn=ontology_testing,
+#         inputs=[
+#             ontology_file, ontology_desc, cq_testing_input
+#         ],
+#         outputs=[
+#             testing_output
+#         ]
+#     )
 
 demo = gr.TabbedInterface(
-    [user_story_interface, cq_interface, clustering_interface, testing_interface],
-    ["User Story Generation", "Competency Question Extraction", "Competency Question Analysis", "Ontology Testing"]
+    # [set_api_key, user_story_interface, cq_interface, clustering_interface, testing_interface],
+    [set_api_key, user_story_interface],
+    ["Set API Key", "User Story Generation", "Competency Question Extraction", "Competency Question Analysis", "Ontology Testing"]
 )
 
-
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(share=True)
