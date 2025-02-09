@@ -27,12 +27,11 @@ def chat_completion(api_key, messages):
 
 def build_messages(history):
     """
-    convert gardio.Chatbot history to OpenAI client messages
-    :param history:
-    :return:
+    Convert Gradio Chatbot history to OpenAI client messages
+    :param history: List of dictionaries with 'role' and 'content' keys
+    :return: List of OpenAI client messages
     """
-    messages = list()
+    messages = []
     for item in history:
-        messages.append({"role": "user", "content": item[0]})
-        messages.append({"role": "system", "content": item[1]})
-    return messages[1:]
+        messages.append({"role": item["role"], "content": item["content"]})
+    return messages
