@@ -14,7 +14,7 @@ from PIL import Image
 from matplotlib import pyplot as plt
 
 from sentence_transformers import SentenceTransformer
-from sklearn.cluster import AgglomerativeClustering, HDBSCAN
+from sklearn.cluster import AgglomerativeClustering
 from scipy.cluster.hierarchy import dendrogram
 
 from ontochat.chatbot import chat_completion
