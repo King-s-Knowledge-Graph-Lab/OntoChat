@@ -47,8 +47,13 @@ OntoChat has been hosted in HF Spaces at: [[https://huggingface.co/spaces/1hangz
 
 ## Acknowledgement
 
-This project acknoledges [Polifonia](https://polifonia-project.eu), and has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 101004746. We also thank all the evaluators that contributed feedback on the effectiveness of the tool and provided their experience of use. We also thank all the evaluators for contributing to the project.
+We acknowledge the following contributions and support:
 
+- This project is co-funded by [Polifonia](https://polifonia-project.eu) under grant agreement No. 101004746 as part of the European Union’s Horizon 2014-2020 research and innovation programme.
+- This project is co-funded by [MuseIT](https://www.muse-it.eu/) under grant agreement No. 101061441 as part of the European Union’s Horizon 2021-2027 research and innovation programme.
+- This project is co-funded by [SIEMENS AG](https://www.siemens.com/global/en.html) and the [Technical University of Munich](https://www.tum.de/), Institute for Advanced Study, Germany.
+
+We also thank all the evaluators that contributed feedback on the effectiveness of the tool and provided their experience of use. We also thank all the evaluators for contributing to the project.
 
 ## License
 
