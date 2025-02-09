@@ -12,7 +12,6 @@
 
 1. **Set Up Your Environment**  
    - Ensure you have **Python 3.11** or higher installed.  
-   - Create a Python environment of your choice (e.g., virtualenv, conda).  
 
 2. **Install Dependencies**  
    - Download the required dependencies:
