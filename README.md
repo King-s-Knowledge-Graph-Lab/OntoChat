@@ -28,12 +28,12 @@
 ## Authors and attribution
 ```
 @inproceedings{zhang2024ontochat,
-  title={OntoChat: A Framework for Conversational Ontology Engineering Using Language Models},
-  author={Zhang, Bohui and Carriero, Valentina Anita and Schreiberhuber, Katrin and Tsaneva, Stefani and Gonz{\'a}lez, Luc{\'i}a S{\'a}nchez and Kim, Jongmo and de Berardinis, Jacopo},
-  booktitle={Extended Semantic Web Conference, ESWC2024. Hersonissos, Greece},
-  volume={15344},
+  title={OntoChat: a framework for conversational ontology engineering using language models},
+  author={Zhang, Bohui and Carriero, Valentina Anita and Schreiberhuber, Katrin and Tsaneva, Stefani and Gonz{\'a}lez, Luc{\'\i}a S{\'a}nchez and Kim, Jongmo and de Berardinis, Jacopo},
+  booktitle={European Semantic Web Conference},
   pages={102--121},
-  year={2024}
+  year={2024},
+  organization={Springer}
 }
 
 @inproceedings{zhao2024improving,
