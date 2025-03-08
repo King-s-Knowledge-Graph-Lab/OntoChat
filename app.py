@@ -34,7 +34,7 @@ with gr.Blocks() as user_story_interface:
             user_story_chatbot = gr.Chatbot(
                 value=[
                     {"role": "assistant", "content": ( 
-                        "Hello! I'm OntoChat 😊. I'll help you create an ontology user story! \n\n**1.** Don't worry about prompting—**find the template 📄 and edit the placeholders 📝** to craft a high-quality response 👍. \n\n**2.** Placeholders **\*\*[]\*\*** are **mandatory**; placeholders **\*[]\*** are **optional**. \n\n**3.** Feel free to ask OntoChat any questions if needed. \n\nLet's get started! **Which domain is this ontology for?** For example, 'Healthcare, Wine, Music, etc.'. Use template **[Create Domain]** to answer."
+                        "Hello! I'm OntoChat 😊. I'll help you create an ontology user story!\n\n 1. I will ask you one **elicitation question** at a time, present an **example answer** to support your understanding, and recommend a **prompt template** 📄 for answering.\n\n 2. Don't worry about prompting—find the **template** 📄 I recommended and edit the **placeholders** 📝 to craft an effective response 👍.\n\n 3. Within a prompt template:\n   - **\*\*[]\*\*** placeholders are **mandatory**.\n   - **\*[]\*** placeholders are **optional**.\n\n 4. I will **refine** my generation iteratively based on your input 🔄 until you are satisfied ✅.\n\nLet's get started! **Which domain is this ontology for?**\n\n**For example:** *Healthcare, Wine, Music, etc.*\n\nUse template **[Create Domain]** to answer. 🚀"
                     )}
                 ],
                 height="472px",
