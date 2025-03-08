@@ -9,17 +9,15 @@ with gr.Blocks() as set_api_key:
         """
         # Welcome to OntoChat! 👋
 
-        ### Introduction
-
-        Hi there! I'm OntoChat, your conversational assistant 🤖 here to support you generate ontology user stories 🎉. I simplify the process by combining human input with GenAI capabilities ✨. Whether you're experienced with prompt engineering or not, I'm here to guide you step by step by (1) asking questions ❓ for elicitation, (2) offering example answers 💡 for guidance, (3) providing predefined templates 📋 to help craft effective prompts, and (4) refining 🛠️ your input into a formal user story. Let's make ontology requirements collection easier and more efficient together 🚀! For more details, visit 🌐 [OntoChat on GitHub](https://github.com/King-s-Knowledge-Graph-Lab/OntoChat). 
-        
-        ### Citations
-        
-        [1] Zhang B, Carriero VA, Schreiberhuber K, Tsaneva S, González LS, Kim J, de Berardinis J. OntoChat: a Framework for Conversational Ontology Engineering using Language Models. arXiv preprint arXiv:2403.05921. 2024 Mar 9.
-        
-        [2] Zhao Y, Zhang B, Hu X, Ouyang S, Kim J, Jain N, de Berardinis J, Meroño-Peñuela A, Simperl E. Improving Ontology Requirements Engineering with OntoChat and Participatory Prompting. InProceedings of the AAAI Symposium Series 2024 Nov 8 (Vol. 4, No. 1, pp. 253-257).
+        Hi there! I'm OntoChat, your conversational assistant for collaborative ontology engineering. (1) 📋 I assist with ontology requirements elicitation by asking targeted questions, collecting user inputs, providing example answers, and recommending prompt templates to guide you. (2) 📝 I offer customizable prompts designed for different interaction stages, ensuring structured guidance throughout the process. (3) ⚙️ You can edit placeholders within these templates to refine constraints and shape my responses to fit your specific needs. (4) 🔄 I continuously improve my responses based on your feedback until you're satisfied. Let's make ontology development smoother and more interactive! 🚀 For more details, visit 🌐 [OntoChat on GitHub](https://github.com/King-s-Knowledge-Graph-Lab/OntoChat).
         """
     )
+
+    # ### Citations
+        
+    # [1] Zhang B, Carriero VA, Schreiberhuber K, Tsaneva S, González LS, Kim J, de Berardinis J. OntoChat: a Framework for Conversational Ontology Engineering using Language Models. arXiv preprint arXiv:2403.05921. 2024 Mar 9.
+    
+    # [2] Zhao Y, Zhang B, Hu X, Ouyang S, Kim J, Jain N, de Berardinis J, Meroño-Peñuela A, Simperl E. Improving Ontology Requirements Engineering with OntoChat and Participatory Prompting. InProceedings of the AAAI Symposium Series 2024 Nov 8 (Vol. 4, No. 1, pp. 253-257).
 
     with gr.Group():
         api_key = gr.Textbox(
