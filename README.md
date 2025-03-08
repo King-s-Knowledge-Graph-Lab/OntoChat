@@ -4,13 +4,7 @@
 
 # OntoChat: Leveraging Large Language Models and Human-Centered Design for Ontology User Story Generation  
 
-**OntoChat** is a conversational agent powered by LLMs, designed to facilitate **collaborative ontology engineering**, with a focus on **ontology requirements elicitation**. It guides user prompting at each interaction stage by providing **elicitation questions, example answers, and prompt templates**, helping users generate **relevant and useful requirements** for ontology development.  
-
-## 🔗 Access OntoChat  
-OntoChat is publicly available on **[Hugging Face Spaces](https://huggingface.co/spaces/1hangzhao/OntoChat)**.  
-
-## 🔧 Recommended Browser  
-➡ **For the best experience, we recommend using Google Chrome.**
+**OntoChat** is a conversational agent powered by LLMs, designed to facilitate **collaborative ontology engineering**, with a focus on **ontology requirements elicitation**. It guides user prompting at each interaction stage by providing **elicitation questions, example answers, and prompt templates**, helping users generate **relevant and useful requirements** for ontology development. OntoChat is publicly available on **[Hugging Face Spaces](https://huggingface.co/spaces/1hangzhao/OntoChat)**. **For the best experience, we recommend using Google Chrome.**
 
 ---
 
