@@ -25,6 +25,28 @@
      Gradio app.py
      ```
 
+## Authors and attribution
+```
+@inproceedings{zhang2024ontochat,
+  title={OntoChat: a framework for conversational ontology engineering using language models},
+  author={Zhang, Bohui and Carriero, Valentina Anita and Schreiberhuber, Katrin and Tsaneva, Stefani and Gonz{\'a}lez, Luc{\'\i}a S{\'a}nchez and Kim, Jongmo and de Berardinis, Jacopo},
+  booktitle={European Semantic Web Conference},
+  pages={102--121},
+  year={2024},
+  organization={Springer}
+}
+
+@inproceedings{zhao2024improving,
+  title={Improving Ontology Requirements Engineering with OntoChat and Participatory Prompting},
+  author={Zhao, Yihang and Zhang, Bohui and Hu, Xi and Ouyang, Shuyin and Kim, Jongmo and Jain, Nitisha and de Berardinis, Jacopo and Mero{\~n}o-Pe{\~n}uela, Albert and Simperl, Elena},
+  booktitle={Proceedings of the AAAI Symposium Series},
+  volume={4},
+  number={1},
+  pages={253--257},
+  year={2024}
+}
+```
+
 ## Acknowledgement
 
 This project has received multiple sources of funding, including co-funding from [MuseIT](https://www.muse-it.eu/) under grant agreement No. 101061441 as part of the European Union’s Horizon 2021-2027 research and innovation programme, as well as support from [SIEMENS AG](https://www.siemens.com/global/en.html) and the [Technical University of Munich](https://www.tum.de/), Institute for Advanced Study, Germany. We also extend our gratitude to all the evaluators for their valuable feedback on the tool’s effectiveness and for sharing their user experiences.
