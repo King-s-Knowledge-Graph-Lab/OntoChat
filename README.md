@@ -27,18 +27,27 @@
 
 ## Authors and attribution
 ```
-@inproceedings{zhang2024ontochat,
-  title={OntoChat: a framework for conversational ontology engineering using language models},
-  author={Zhang, Bohui and Carriero, Valentina Anita and Schreiberhuber, Katrin and Tsaneva, Stefani and Gonz{\'a}lez, Luc{\'\i}a S{\'a}nchez and Kim, Jongmo and de Berardinis, Jacopo},
-  booktitle={European Semantic Web Conference},
-  pages={102--121},
-  year={2024},
-  organization={Springer}
+@inproceedings{zhang-et-al-2024-ontochat,
+  author = {Zhang, Bohui and Carriero, Valentina Anita and Schreiberhuber, Katrin and Tsaneva, Stefani and Gonz\'{a}lez, Luc\'{\i}a S\'{a}nchez and Kim, Jongmo and de Berardinis, Jacopo},
+  title = {OntoChat: A&nbsp;Framework for&nbsp;Conversational Ontology Engineering Using Language Models},
+  year = {2025},
+  isbn = {978-3-031-78951-9},
+  publisher = {Springer-Verlag},
+  address = {Berlin, Heidelberg},
+  url = {https://doi.org/10.1007/978-3-031-78952-6_10},
+  doi = {10.1007/978-3-031-78952-6_10},
+  booktitle = {The Semantic Web: ESWC 2024 Satellite Events: Hersonissos, Crete, Greece, May 26–30, 2024, Proceedings, Part I},
+  pages = {102–121},
+  numpages = {20},
+  keywords = {Ontology Engineering, Large Language Models, Competency Questions, Computational Creativity},
+  location = {Hersonissos, Greece}
 }
 
 @inproceedings{zhao2024improving,
   title={Improving Ontology Requirements Engineering with OntoChat and Participatory Prompting},
   author={Zhao, Yihang and Zhang, Bohui and Hu, Xi and Ouyang, Shuyin and Kim, Jongmo and Jain, Nitisha and de Berardinis, Jacopo and Mero{\~n}o-Pe{\~n}uela, Albert and Simperl, Elena},
+  url = {https://ojs.aaai.org/index.php/AAAI-SS/article/view/31799},
+  doi = {10.1609/aaaiss.v4i1.31799},
   booktitle={Proceedings of the AAAI Symposium Series},
   volume={4},
   number={1},
