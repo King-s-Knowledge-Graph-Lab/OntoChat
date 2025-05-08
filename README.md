@@ -27,6 +27,8 @@ OntoChat is publicly available on **[Hugging Face Spaces](https://huggingface.co
      Gradio app.py
      ```
 
+**Evaluated with [Bench4KE](https://github.com/fossr-project/ontogenia-cini)**.
+
 ## Authors and attribution
 ```
 @inproceedings{zhang-et-al-2024-ontochat,
