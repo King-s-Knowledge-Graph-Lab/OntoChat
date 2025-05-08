@@ -4,3 +4,7 @@ scikit-learn
 sentence-transformers
 rdflib
 matplotlib
+fastapi
+uvicorn
+gradio_client
+pandas
