@@ -4,7 +4,7 @@
 
 # OntoChat: a Framework for Conversational Ontology Engineering using Language Models
 
-OntoChat is a LLM-based conversational agent designed to facilitate collaborative ontology engineering. It currently supports ontology requirement elicitation, analysis, and testing.
+OntoChat is a LLM-based conversational agent designed to facilitate collaborative ontology engineering. It currently supports ontology requirement elicitation, analysis, and testing. CQ generation is evaluated with [Bench4KE](https://github.com/fossr-project/ontogenia-cini), a benchmarking framework that compares generated CQs against gold standards using lexical and semantic metrics.
 
 OntoChat is publicly available on **[Hugging Face Spaces](https://huggingface.co/spaces/1hangzhao/OntoChat)**. For the best experience, we recommend using **Google Chrome**.
 
@@ -26,8 +26,6 @@ OntoChat is publicly available on **[Hugging Face Spaces](https://huggingface.co
      ```bash
      Gradio app.py
      ```
-
-**Evaluated with [Bench4KE](https://github.com/fossr-project/ontogenia-cini)**.
 
 ## Authors and attribution
 ```
