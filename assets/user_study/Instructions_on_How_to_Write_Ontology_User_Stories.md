@@ -9,7 +9,6 @@ A persona represents the typical user of your ontology. Creating a detailed pers
 - **Age:** Provide an approximate age or age range.
 - **Occupation:** Describe the persona's profession or field of expertise.
 - **Skills and Interests:** Identify what the persona is proficient in and what they are interested in.
-- **Challenges and Needs:** Highlight specific challenges the persona faces that could be addressed by your ontology.
 
 By clearly defining a persona, you can better understand how they would interact with your ontology and what functionality they would expect.
 
