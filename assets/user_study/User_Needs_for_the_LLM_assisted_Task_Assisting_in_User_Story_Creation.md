@@ -5,7 +5,6 @@
 The domain of the ontology-based system is **[DOMAIN]**.
 
 Please ensure that all responses are strictly relevant to this system's domain. Use terminology and structures that are specific to ontology-based systems, including appropriate relationships and reasoning principles. Do not introduce information outside the defined scope.
-
 ```
 
 ## **Persona Refinement**
@@ -37,16 +36,16 @@ Please refine my response to ensure:
 
 ## **Action Refinement**
 ```plaintext
-The ontology-driven actions I need to take to achieve my goal are **[ACTIONS]**.
+The actions I need to take to build the ontology-based system for my goal are **[ACTIONS]**.
 
 Please refine my response to ensure:
 
-1. The actions are clearly described, directly related to the use or development of the ontology-based system.
-2. List the actions as simple, practical steps needed to complete the target task or achieve the stated goal with the ontology-based system.
-3. Where possible, include specific *[ONTOLOGY ENGINEERING METHODS]*, *[KNOWLEDGE REPRESENTATION TOOLS]*, or *[INFERENCE TECHNIQUES]* that would be used in each step.
-4. If relevant, add *[INTERDISCIPLINARY INSIGHTS]* to show how ontologies support knowledge management in the broader context.
-5. Make sure the actions fit logically with my background and the purpose of the ontology-based system.
-6. Use *[CONCISE & PRECISE / CREATIVE & DETAILED]* language as needed.
+1. The actions are clearly described and directly relate to the step-by-step process of developing or configuring the ontology-based system.
+2. List the actions as simple, practical steps required to design, construct, and deploy the ontology-based system for the target domain or goal.
+3. For each step, specify any *[ONTOLOGY ENGINEERING METHODS]*, *[KNOWLEDGE REPRESENTATION TOOLS]*, *[DATA SOURCES]*, or *[REASONING TECHNIQUES]* used in the process.   
+4. If relevant, include *[COLLABORATION WITH DOMAIN EXPERTS]* or integration of *[EXTERNAL DATASETS]* to enhance system quality.   
+5. Ensure the actions logically align with my background and the requirements of the domain and user goal.   
+6. Use *[CONCISE & PRECISE / CREATIVE & DETAILED]* language, as appropriate.
 7. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
 ```
 
@@ -62,7 +61,6 @@ Please refine my response to ensure:
 4. Expand each keyword by adding related ontological terms, such as subclasses, parent classes, or linked data mappings.
 5. Use *[CONCISE & PRECISE / CREATIVE & DETAILED]* language as required.
 6. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
-
 ```
 
 ## **Current Methods Refinement**
@@ -78,7 +76,6 @@ Please refine my response to ensure:
 5. Do not mention challenges, ontology-based systems, new methods, or expected outcomes.
 6. Use *[CONCISE & PRECISE / CREATIVE & DETAILED]* language, as needed.
 7. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
-
 ```
 
 ## **Challenges Refinement**
@@ -94,7 +91,6 @@ Please refine my response to ensure:
 5. Focus only on core difficulties with current methods—do not discuss possible solutions or expected improvements.
 6. Use *[CONCISE & PRECISE / CREATIVE & DETAILED]* language, as needed.
 7. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
-
 ```
 
 ## **New Methods Refinement**
@@ -109,7 +105,6 @@ Please refine my response to ensure:
 4. Only describe new approaches and capabilities that are possible with the ontology-based system—do not discuss previous challenges or prior manual methods.
 5. Use *[CONCISE & PRECISE / CREATIVE & DETAILED]* language, as best fits the context.
 6. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
-
 ```
 
 ## **Expected Outcomes Refinement**
@@ -124,5 +119,4 @@ Please refine my response to ensure:
 4. Only include ontology-driven improvements—do not discuss prior methods or challenges.
 5. Use *[CONCISE & PRECISE / CREATIVE & DETAILED]* language as best fits the context.
 6. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
-
 ```
