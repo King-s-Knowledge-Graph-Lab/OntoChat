@@ -9,7 +9,7 @@ Please ensure that all responses are strictly relevant to this system's domain. 
 
 ## **Persona Specification**
 ```plaintext
-My persona is **[NAME]**, I am **[AGE]** years old, and I work as a **[OCCUPATION]** in the domain of **[DOMAIN]**. My expertise includes **[SKILLS]**, and I have a strong interest in **[INTERESTS]**.
+My persona is **[NAME]**, I am **[AGE]** years old, and I work as a **[OCCUPATION]. My expertise includes **[SKILLS]**, and I have a strong interest in **[INTERESTS]**.
 
 Please refine my response to ensure:
 
@@ -22,7 +22,7 @@ Please refine my response to ensure:
 
 ## **User Goal Specification**
 ```plaintext
-My ontology user goal is **[USER GOAL DESCRIPTION]**.
+The knowledge modelling objective I aim to achieve with the ontology-based system is **[USER GOAL]**
 
 Please refine my response to ensure:
 
@@ -36,7 +36,7 @@ Please refine my response to ensure:
 
 ## **Action Specification**
 ```plaintext
-The actions I need to take to build the ontology-based system for my goal are **[ACTIONS]**.
+The steps I need to take to build or configure the ontology-based system for this objective are **[ACTIONS]**.
 
 Please refine my response to ensure:
 
@@ -51,7 +51,7 @@ Please refine my response to ensure:
 
 ## **Keyword Specification**
 ```plaintext
-The key ontology concepts and terms related to my goal are **[KEYWORDS]**.
+The key domain concepts to be represented within the ontology-based system are **[KEYWORDS]**.
 
 Please refine my response to ensure:
 
@@ -65,7 +65,7 @@ Please refine my response to ensure:
 
 ## **Current Methods Specification**
 ```plaintext
-The current methods I use to achieve my goal, without using any ontology-based system, are **[CURRENT METHODS]**.
+The current manual methods I use to achieve my goal, without the ontology-based system, are **[CURRENT METHODS]**.
 
 Please refine my response to ensure:
 
@@ -80,7 +80,7 @@ Please refine my response to ensure:
 
 ## **Challenges Specification**
 ```plaintext
-The challenges I face in my current manual or ad-hoc methods (without ontology-based systems) are **[CHALLENGES]**.
+The limitations in current practices that the ontology-based system should address are **[CHALLENGES]**.
 
 Please refine my response to ensure:
 
@@ -95,7 +95,7 @@ Please refine my response to ensure:
 
 ## **New Methods Specification**
 ```plaintext
-The new methods I will use to address my challenges with the support of an ontology-based system are **[NEW METHODS]**.
+The sequence of interactions I will have with the ontology-based system to address these challenges are **[NEW METHODS]**.
 
 Please refine my response to ensure:
 
@@ -109,7 +109,7 @@ Please refine my response to ensure:
 
 ## **Expected Outcomes Specification**
 ```plaintext
-The expected outcomes of implementing ontology-based system methods are **[OUTCOMES]**.
+The expected benefits of using the ontology-based system are [OUTCOMES].
 
 Please refine my response to ensure:
 
