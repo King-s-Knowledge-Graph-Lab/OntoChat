@@ -7,7 +7,7 @@ The domain of the ontology-based system is **[DOMAIN]**.
 Please ensure that all responses are strictly relevant to this system's domain. Use terminology and structures that are specific to ontology-based systems, including appropriate relationships and reasoning principles. Do not introduce information outside the defined scope.
 ```
 
-## **Persona Refinement**
+## **Persona Specification**
 ```plaintext
 My persona is **[NAME]**, I am **[AGE]** years old, and I work as a **[OCCUPATION]** in the domain of **[DOMAIN]**. My expertise includes **[SKILLS]**, and I have a strong interest in **[INTERESTS]**.
 
@@ -20,7 +20,7 @@ Please refine my response to ensure:
 5. Present the output as *[BULLET POINTS / A DETAILED PARAGRAPH]*.
 ```
 
-## **User Goal Refinement**
+## **User Goal Specification**
 ```plaintext
 My ontology user goal is **[USER GOAL DESCRIPTION]**.
 
@@ -34,7 +34,7 @@ Please refine my response to ensure:
 6. Present the output as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
 ```
 
-## **Action Refinement**
+## **Action Specification**
 ```plaintext
 The actions I need to take to build the ontology-based system for my goal are **[ACTIONS]**.
 
@@ -49,7 +49,7 @@ Please refine my response to ensure:
 7. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
 ```
 
-## **Keyword Refinement**
+## **Keyword Specification**
 ```plaintext
 The key ontology concepts and terms related to my goal are **[KEYWORDS]**.
 
@@ -63,7 +63,7 @@ Please refine my response to ensure:
 6. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
 ```
 
-## **Current Methods Refinement**
+## **Current Methods Specification**
 ```plaintext
 The current methods I use to achieve my goal, without using any ontology-based system, are **[CURRENT METHODS]**.
 
@@ -78,7 +78,7 @@ Please refine my response to ensure:
 7. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
 ```
 
-## **Challenges Refinement**
+## **Challenges Specification**
 ```plaintext
 The challenges I face in my current manual or ad-hoc methods (without ontology-based systems) are **[CHALLENGES]**.
 
@@ -93,7 +93,7 @@ Please refine my response to ensure:
 7. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
 ```
 
-## **New Methods Refinement**
+## **New Methods Specification**
 ```plaintext
 The new methods I will use to address my challenges with the support of an ontology-based system are **[NEW METHODS]**.
 
@@ -107,7 +107,7 @@ Please refine my response to ensure:
 6. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
 ```
 
-## **Expected Outcomes Refinement**
+## **Expected Outcomes Specification**
 ```plaintext
 The expected outcomes of implementing ontology-based system methods are **[OUTCOMES]**.
 
