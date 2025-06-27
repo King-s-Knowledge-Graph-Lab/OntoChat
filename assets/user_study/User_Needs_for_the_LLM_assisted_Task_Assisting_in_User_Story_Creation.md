@@ -13,11 +13,11 @@ My persona is **[NAME]**, I am **[AGE]** years old, and I work as a **[OCCUPATIO
 
 Please refine my response to ensure:
 
-1. The persona is clearly described with a focus on ontology-related expertise.
-2. The details (name, age, occupation, skills, interests) are logically aligned with domain ontologies and structured knowledge representation.
-3. If the skills and interests provided by the user are similar and hard to differentiate, generate distinct ones by distinguishing between conceptual knowledge (e.g., ontological modeling) and applied techniques (e.g., knowledge graph construction).
-4. The language is *[CONCISE & PRECISE / CREATIVE & DETAILED]*, ensuring clarity in an ontology-driven context.
-5. The final answer is structured as *[BULLET POINTS / A DETAILED PARAGRAPH]*.
+1. The persona is described clearly, emphasizing expertise or experience relevant to ontology-based systems in the specified domain.
+2. Details (name, age, occupation, skills, interests) are logically aligned with domain knowledge, typical users, and the use of ontology-based systems.
+3. If skills and interests overlap, make them distinct by separating conceptual knowledge (e.g., data modeling, requirements analysis) from applied skills (e.g., ontology development, knowledge graph implementation).
+4. Use *[CONCISE & PRECISE / CREATIVE & DETAILED]* language for clarity and suitability in a knowledge-intensive context.
+5. Present the output as *[BULLET POINTS / A DETAILED PARAGRAPH]*.
 ```
 
 ## **User Goal Refinement**
@@ -26,12 +26,12 @@ My ontology user goal is **[USER GOAL DESCRIPTION]**.
 
 Please refine my response to ensure:
 
-1. The goal is clearly described and ontology-driven, emphasizing knowledge structuring, reasoning, or interoperability.
-2. Expand the goal description, if necessary, to ensure it starts with a high-level *[KNOWLEDGE REPRESENTATION OBJECTIVE]* followed by a specific *[ONTOLOGY-SUPPORTED TASK]*.
-3. Ensure the goal description aligns with my domain expertise and the role of ontologies in solving real-world problems.
-4. The focus remains solely on ontology-related objectives, avoiding unrelated technical or system-level descriptions.
-5. The language is *[CONCISE & PRECISE / CREATIVE & DETAILED]*.
-6. The final answer is structured as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
+1. The goal is clearly described and directly related to using an ontology-based system to support a real task in the specified domain.
+2. Expand the goal if needed: start with a high-level *[KNOWLEDGE REPRESENTATION OBJECTIVE]* (such as representing key domain knowledge, integrating data, or enabling reasoning), then describe a specific *[DOMAIN TASK]* or *[USER NEED]* that the ontology-based system should support.
+3. Make sure the goal aligns with my domain expertise and addresses a practical scenario where ontology-based systems add value.
+4. Focus on the ontology-supported aspects of the task, not unrelated system functions or technology details.
+5. Use *[CONCISE & PRECISE / CREATIVE & DETAILED]* language as needed for clarity.
+6. Present the output as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
 ```
 
 ## **Action Refinement**
@@ -40,13 +40,13 @@ The ontology-driven actions I need to take to achieve my goal are **[ACTIONS]**.
 
 Please refine my response to ensure:
 
-1. The actions are clearly described and ontology-specific.
-2. The actions are actionable and presented as a logical sequence of steps related to ontology design, integration, or reasoning.
-3. Each step includes specific *[ONTOLOGY ENGINEERING METHODS]*, *[KNOWLEDGE REPRESENTATION TOOLS]*, or *[INFERENCE TECHNIQUES]* and is practical.
-4. Where relevant, incorporate *[INTERDISCIPLINARY INSIGHTS]* to describe the role of ontologies in broader knowledge management.
-5. Ensure the actions align logically with my expertise and ontology development goals.
-6. The language is *[CONCISE & PRECISE / CREATIVE & DETAILED]*.
-7. The final answer is structured as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
+1. The actions are clearly described, directly related to the use or development of the ontology-based system.
+2. List the actions as simple, practical steps needed to complete the target task or achieve the stated goal with the ontology-based system.
+3. Where possible, include specific *[ONTOLOGY ENGINEERING METHODS]*, *[KNOWLEDGE REPRESENTATION TOOLS]*, or *[INFERENCE TECHNIQUES]* that would be used in each step.
+4. If relevant, add *[INTERDISCIPLINARY INSIGHTS]* to show how ontologies support knowledge management in the broader context.
+5. Make sure the actions fit logically with my background and the purpose of the ontology-based system.
+6. Use *[CONCISE & PRECISE / CREATIVE & DETAILED]* language as needed.
+7. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
 ```
 
 ## **Keyword Refinement**
@@ -55,70 +55,73 @@ The key ontology concepts and terms related to my goal are **[KEYWORDS]**.
 
 Please refine my response to ensure:
 
-1. The keywords are clearly defined and ontology-relevant.
-2. Each keyword directly supports knowledge structuring and reasoning.
-3. Keywords are aligned with *[EXISTING ONTOLOGY VOCABULARIES]* or *[STANDARDS]*.
-4. Keywords are expanded with related ontological terms (e.g., subclass relationships, linked data mappings).
-5. The language is *[CONCISE & PRECISE / CREATIVE & DETAILED]*.
-6. The final answer is structured as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
+1. The keywords are clearly defined and directly relevant to the ontology-based system and the target domain.
+2. Each keyword should support knowledge structuring and reasoning within the ontology.
+3. Where possible, align the keywords with *[EXISTING ONTOLOGY VOCABULARIES]* or recognized *[STANDARDS]*.
+4. Expand each keyword by adding related ontological terms, such as subclasses, parent classes, or linked data mappings.
+5. Use *[CONCISE & PRECISE / CREATIVE & DETAILED]* language as required.
+6. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
+
 ```
 
 ## **Current Methods Refinement**
 ```plaintext
-The current methods I use for knowledge representation and reasoning are **[CURRENT METHODS]**.
+The current methods I use to achieve my goal, without using any ontology-based system, are **[CURRENT METHODS]**.
 
 Please refine my response to ensure:
 
-1. The methods are clearly described and align with ontology-based workflows.
-2. The methods must involve manual or ad-hoc knowledge structuring efforts.
-3. The methods are actionable and presented as a logical sequence of ontology modeling or reasoning steps.
-4. Each step includes specific *[ONTOLOGY MODELING TOOLS]*, *[KNOWLEDGE REPRESENTATION LANGUAGES]*, or *[LOGICAL INFERENCE TECHNIQUES]*.
-5. Where relevant, incorporate *[INTERDISCIPLINARY INSIGHTS]* to describe the challenges in integrating knowledge across domains.
-6. The methods align logically with my expertise and goals.
-7. The methods include only knowledge structuring tasks, without discussing challenges, new methods, or expected outcomes.
-8. The language is *[CONCISE & PRECISE / CREATIVE & DETAILED]*.
-9. The final answer is structured as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
+1. The methods are clearly described and involve only manual or ad-hoc approaches for structuring and applying domain knowledge, with no use of ontology-based systems or automated reasoning tools.
+2. Present the methods as a logical, step-by-step sequence of actions or procedures currently used to achieve my goal.
+3. For each step, specify any *[MANUAL TOOLS, DOCUMENTATION PRACTICES, or INFORMAL REPRESENTATION TECHNIQUES]* (such as spreadsheets, text documents, or diagrams).
+4. The methods should reflect established practices within my domain and align logically with my expertise and goals.
+5. Do not mention challenges, ontology-based systems, new methods, or expected outcomes.
+6. Use *[CONCISE & PRECISE / CREATIVE & DETAILED]* language, as needed.
+7. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
+
 ```
 
 ## **Challenges Refinement**
 ```plaintext
-The challenges I face in ontology-based knowledge representation are **[CHALLENGES]**.
+The challenges I face in my current manual or ad-hoc methods (without ontology-based systems) are **[CHALLENGES]**.
 
 Please refine my response to ensure:
 
-1. The challenges are clearly described and relate to ontology structuring, reasoning, or interoperability.
-2. Each challenge should be derived from *[CURRENT TOOLS]*, *[METHODOLOGIES]*, or *[LOGICAL CONSTRAINTS]* used.
-3. Where relevant, incorporate *[ONTOLOGY INTEGRATION CHALLENGES]* related to external knowledge bases.
-4. The challenges align logically with my domain expertise and ontology development.
-5. The challenges include only the core difficulties, without discussing solutions or expected improvements.
-6. The language is *[CONCISE & PRECISE / CREATIVE & DETAILED]*.
-7. The final answer is structured as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
+1. The challenges are clearly described and arise directly from my current tools, workflows, or informal practices for structuring and reasoning about domain knowledge.
+2. Each challenge should be specific and derived from limitations of *[CURRENT TOOLS]*, *[METHODOLOGIES]*, or *[LOGICAL CONSTRAINTS]* used in my existing (non-ontology) approaches.
+3. Where relevant, include issues related to data consistency, integration across sources, or knowledge reuse.
+4. The challenges should logically relate to my domain and my knowledge structuring goals.
+5. Focus only on core difficulties with current methods—do not discuss possible solutions or expected improvements.
+6. Use *[CONCISE & PRECISE / CREATIVE & DETAILED]* language, as needed.
+7. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
+
 ```
 
 ## **New Methods Refinement**
 ```plaintext
-The ontology-based methods I will use to address my challenges are **[NEW METHODS]**.
+The new methods I will use to address my challenges with the support of an ontology-based system are **[NEW METHODS]**.
 
 Please refine my response to ensure:
 
-1. The new methods are clearly described and ontology-driven.
-2. The new methods align with what an ontology-based system can offer, such as automated reasoning, semantic search, or ontology alignment.
-3. The methods align logically with my goals and expected improvements.
-4. The methods include only knowledge representation enhancements, without discussing previous challenges or outcomes.
-5. The language is *[CONCISE & PRECISE / CREATIVE & DETAILED]*.
-6. The final answer is structured as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
+1. The methods are clearly described and directly enabled by features of the ontology-based system.
+2. Each method should show how the ontology-based system supports automated reasoning, semantic search, ontology alignment, or other advanced knowledge management functions.
+3. All methods should logically align with my stated goals and expected improvements in managing or utilizing domain knowledge.
+4. Only describe new approaches and capabilities that are possible with the ontology-based system—do not discuss previous challenges or prior manual methods.
+5. Use *[CONCISE & PRECISE / CREATIVE & DETAILED]* language, as best fits the context.
+6. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
+
 ```
 
 ## **Expected Outcomes Refinement**
 ```plaintext
-The expected outcomes of implementing ontology-driven methods are **[OUTCOMES]**.
+The expected outcomes of implementing ontology-based system methods are **[OUTCOMES]**.
 
 Please refine my response to ensure:
 
-1. The outcomes are clearly described and ontology-relevant.
-2. The outcomes must align with the benefits of a structured knowledge representation system.
-3. The outcomes align logically with my overall goal.
-4. The outcomes include only ontology-driven improvements, without discussing previous methods or challenges.
-5. The language is *[CONCISE & PRECISE / CREATIVE & DETAILED]*.
-6. The final answer is structured as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
+1. The outcomes are clearly described and directly result from using the ontology-based system.
+2. The outcomes reflect benefits such as improved knowledge structuring, reasoning, semantic interoperability, or automation enabled by the ontology-based system.
+3. The outcomes align logically with my overall goal for the ontology-based application.
+4. Only include ontology-driven improvements—do not discuss prior methods or challenges.
+5. Use *[CONCISE & PRECISE / CREATIVE & DETAILED]* language as best fits the context.
+6. Structure the answer as *[BULLET POINTS / A DETAILED PARAGRAPH / TAXONOMY-LIKE HIERARCHY]*.
+
 ```
