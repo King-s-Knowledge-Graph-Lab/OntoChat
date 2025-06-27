@@ -2,9 +2,10 @@
 
 ## **Ontology Domain Specification**
 ```plaintext
-The ontology's domain is **[DOMAIN]**.
+The domain of the ontology-based system is **[DOMAIN]**.
 
-Ensure all subsequent responses strictly adhere to the scope of my domain. Use ontology-specific terminology and align responses with relevant ontological structures, relationships, and reasoning principles.
+Please ensure that all responses are strictly relevant to this system's domain. Use terminology and structures that are specific to ontology-based systems, including appropriate relationships and reasoning principles. Do not introduce information outside the defined scope.
+
 ```
 
 ## **Persona Refinement**
