@@ -61,5 +61,15 @@
 - Did the participant submit the template? **[Yes/No]**
 - Challenges encountered: **[Describe any observed difficulties]**
 
+### **9. OntoChat Elicitation Process**
+- Did OntoChat propose the correct elicitation question for the current stage? **[Yes/No]**
+- Did OntoChat provide an example answer relevant to the current stage? **[Yes/No]**
+- Did OntoChat suggest the corresponding prompt template for each stage? **[Yes/No]**
+
+### **10. OntoChat Refinement Process**
+- After generating an output, did OntoChat prompt the participant for feedback? **[Yes/No]**
+- Did OntoChat refine the content based on user feedback? **[Yes/No]**
+- Did the system refrain from proceeding to the next step until participant satisfaction was indicated? **[Yes/No]**
+
 ## **Summary Metrics**
 - Total number of unique templates submitted: **[Enter count]**
