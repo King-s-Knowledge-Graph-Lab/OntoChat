@@ -63,5 +63,9 @@ Provide a detailed sequence of actions Alex needs to take to achieve the goal of
 
 After obtaining user satisfaction for the current task, it demonstrates that LLMs have two key potentials for supporting story creation:
 
+```plaintext
 1. Request step-by-step actions in the prompt when the initial response is too general. This helps ensure the output is logical and actionable.
+```
+```plaintext
 2. Ask for specific tools or methods to be included. This makes the response more practical and directly useful for implementation.
+```
