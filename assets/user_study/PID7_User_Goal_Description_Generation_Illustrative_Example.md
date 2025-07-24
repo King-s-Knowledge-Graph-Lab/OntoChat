@@ -6,7 +6,7 @@ Participants were first instructed on how to write an ontology user story, with 
 
 [Instructions on How to Write Ontology User Stories](https://github.com/King-s-Knowledge-Graph-Lab/OntoChat/blob/main/assets/user_study/Instructions_on_How_to_Write_Ontology_User_Stories.md)
 
-The task involved using GPT-4 to generate an ontology user story leveraging their domain-specific knowledge. Below is an example demonstrating how each step works.
+The task involved using GPT-4 to generate an ontology user story for a real OE project they have participated in. Below is an example demonstrating how each step works.
 
 ### **Example**
 
