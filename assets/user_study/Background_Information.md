@@ -66,6 +66,4 @@ With **automated reasoning and semantic enrichment**, Linka achieves:
 
 ## **7. Purpose of This Study**
 The objective of this study is to evaluate how effectively **OntoChat** supports users at different stages of ontology user story creation. Key areas of investigation include:
-- The usability and intuitiveness of OntoChat’s elicitation process.
-- The accuracy and completeness of generated ontology user stories.
-- The potential for improving ontology alignment with real-world needs.
+- The usability, utility, and effectiveness of OntoChat's elicitation process.
