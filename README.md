@@ -43,6 +43,19 @@ OntoChat is designed to facilitate collaborative ontology engineering. It curren
   location = {Hersonissos, Greece}
 }
 
+@article{10.1145/3810943,
+author = {Zhao, Yihang and Kurteva, Anelia and Mero\~{n}o Pe\~{n}uela, Albert and Simperl, Elena},
+title = {OntoChat Assistant for User Story Generation in Ontology Engineering},
+year = {2026},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+issn = {2157-6904},
+url = {https://doi.org/10.1145/3810943},
+doi = {10.1145/3810943},
+journal = {ACM Trans. Intell. Syst. Technol.},
+month = apr
+}
+
 @inproceedings{zhao2024improving,
   title={Improving Ontology Requirements Engineering with OntoChat and Participatory Prompting},
   author={Zhao, Yihang and Zhang, Bohui and Hu, Xi and Ouyang, Shuyin and Kim, Jongmo and Jain, Nitisha and de Berardinis, Jacopo and Mero{\~n}o-Pe{\~n}uela, Albert and Simperl, Elena},
